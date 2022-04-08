@@ -1,0 +1,24 @@
+.header {
+    padding: 60px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    margin: 0 -45px;
+
+    a {
+        text-transform: uppercase;
+        display: block;
+        padding: 0 45px;
+
+        &.active {
+            font-weight: $font-weight-black;
+        }
+    }
+}

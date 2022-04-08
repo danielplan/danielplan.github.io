@@ -1,0 +1,16 @@
+$primary-color: #FF6056;
+$secondary-color: #5E36FF;
+$gradient: radial-gradient(142.51% 233.83% at 0% 0%, #{$primary-color} 0%, #{$secondary-color} 100%);
+$black: #0D0A08;
+$white: #FBF9FF;
+
+$container-max-width-md: 1200px;
+$container-max-width: 1400px;
+
+$breakpoints: ('small': 360px,
+    'medium': 820px,
+    'large': 1280px,
+    'xlarge': 1620px);
+
+$font-weight-bold: 700;
+$font-weight-black: 800;

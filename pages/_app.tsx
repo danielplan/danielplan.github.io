@@ -1,8 +1,20 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@styles/base.scss";
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import Navigation from "@components/layout/Navigation";
+import FakeCursor from "@components/atoms/FakeCursor";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <Head>
+        <link rel="icon" href="/logo.svg" />
+      </Head>
+      <Navigation />
+      <FakeCursor />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;

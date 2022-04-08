@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:wght@700&display=swap');
+
+html,
+body {
+  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: $black;
+  color: $white;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  cursor: none;
+}
+
+.container {
+  max-width: $container-max-width-md;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: 100%;
+
+  @include breakpoint(xlarge) {
+    max-width: $container-max-width;
+  }
+}
+
+
+h1 {
+  font-size: 110px;
+  line-height: 1;
+
+  .tiny-text {
+    line-height: 1.2;
+    font-size: 36px;
+    text-transform: uppercase;
+  }
+
+  .special {
+    font-family: 'Poppins', 'Nunito Sans', sans-serif;
+  }
+}

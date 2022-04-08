@@ -1,0 +1,14 @@
+.cursor {
+    width: 20px;
+    height: 20px;
+    margin-left: -10px;
+    margin-top: -10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    transition: transform 100ms ease;
+    z-index: 1000;
+    backdrop-filter: invert(1);
+}
