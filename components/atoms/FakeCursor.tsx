@@ -31,7 +31,7 @@ const FakeCursor = (): JSX.Element => {
       window.removeEventListener("mousemove", moveCursor);
       window.removeEventListener("mouseout", removeCursor);
     };
-  });
+  }, [cursor]);
   return <div className={styles.cursor} ref={cursor}></div>;
 };
 
