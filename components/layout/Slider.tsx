@@ -51,7 +51,6 @@ const Slider = ({ slides }: Props): JSX.Element => {
         </div>
       ))}
       {transitionState > 0 && <div className={styles.transitionBox}></div>}
-      <div className={styles.transitionBox}></div>
       <div className={styles.legend}>
         <SlideUp>
           {String(current + 1).padStart(2, "0")}{" "}

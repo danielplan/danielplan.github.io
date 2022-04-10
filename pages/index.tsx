@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "@styles/pages/Home.module.scss";
 import Introduction from "@components/modules/Introduction";
+import Text from "@components/modules/Text";
 
 const Home: NextPage = () => {
   return (
@@ -12,6 +13,16 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <Introduction />
+        <Text
+          smallHeading="get to"
+          largeHeadingWhite="know"
+          largeHeadingColor="me"
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+          <b>enim ad</b> minim veniam, quis nostrud exercitation ullamco laboris
+          nisi ut aliquip ex ea commodo consequat.
+        </Text>
       </main>
     </>
   );

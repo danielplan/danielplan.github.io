@@ -5,8 +5,12 @@
     &>* {
         transform: translateY(100%);
         opacity: 0;
-        animation: 600ms ease-out forwards slide-up;
-        animation-delay: 200ms;
+    }
+
+    .animate {
+        transform: translateY(100%);
+        opacity: 0;
+        animation: 800ms ease-out forwards slide-up;
     }
 }
 

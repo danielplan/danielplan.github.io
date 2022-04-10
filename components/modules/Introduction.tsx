@@ -20,7 +20,7 @@ const Introduction = (): JSX.Element => {
           </div>
           <div className={styles.text}>
             <h1>
-              <div className="tiny-text slide-up">
+              <div className="tiny-text">
                 <SlideUp>Hey I&apos;m</SlideUp>
               </div>
               <div className="special">

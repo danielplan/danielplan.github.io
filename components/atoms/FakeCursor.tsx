@@ -1,20 +1,20 @@
 import styles from "@styles/atoms/FakeCursor.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const FakeCursor = (): JSX.Element => {
   const cursor = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (cursor.current) {
-        const mouseY = e.clientY;
-        const mouseX = e.clientX;
+        const mouseY = e.offsetY;
+        const mouseX = e.offsetX;
         const element = e.target as HTMLElement;
         cursor.current.style.display = "block";
         if (mouseX && mouseY) {
           if (parentHasClass("clickable", element)) {
-            cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) scale(4)`;
+            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(4)`;
           } else {
-            cursor.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
           }
         }
       }
