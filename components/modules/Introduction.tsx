@@ -1,7 +1,6 @@
 import styles from "@styles/modules/Introduction.module.scss";
 import GradientText from "@components/atoms/GradientText";
 import Button from "@components/atoms/Button";
-import "swiper/css";
 import SlideUp from "@components/animations/SlideUp";
 import Slider from "@components/layout/Slider";
 
@@ -31,7 +30,7 @@ const Introduction = (): JSX.Element => {
               </div>
             </h1>
             <Button href="/portfolio" arrowRight>
-              Get to know me
+              See my work
             </Button>
           </div>
         </div>

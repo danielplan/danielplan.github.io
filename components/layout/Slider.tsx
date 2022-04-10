@@ -14,28 +14,32 @@ interface Props {
 
 const Slider = ({ slides }: Props): JSX.Element => {
   const [current, setCurrent] = useState(0);
-  const [started, setStarted] = useState(false);
+  const [transitionState, setTransitionState] = useState(0);
   useEffect(() => {
-    setStarted(true);
     const interval = setInterval(() => {
-      setCurrent((i) => (i + 1) % slides.length);
-    }, 5000);
+      setTransitionState(1);
+      setTimeout(() => {
+        setTransitionState(2);
+        setCurrent((i) => (i + 1) % slides.length);
+        setTimeout(() => {
+          setTransitionState(0);
+        }, 750);
+      }, 750);
+    }, 7000);
 
     return () => clearInterval(interval);
   }, [slides.length]);
   return (
-    <div className={styles.container}>
+    <div
+      className={`${styles.container} ${
+        transitionState > 0 ? styles["transition-" + transitionState] : ""
+      }`}
+    >
       {slides.map((slide, i) => (
         <div
           key={i}
           className={`${styles.slide}
           ${current == i ? styles.current : ""}
-          ${
-            (current == 0 && i == slides.length - 1) ||
-            (current - 1) % slides.length == i
-              ? styles.prev
-              : ""
-          }
            clickable`}
         >
           <div className={styles.image}>
@@ -46,13 +50,16 @@ const Slider = ({ slides }: Props): JSX.Element => {
           </div>
         </div>
       ))}
+      {transitionState > 0 && <div className={styles.transitionBox}></div>}
+      <div className={styles.transitionBox}></div>
       <div className={styles.legend}>
         <SlideUp>
-          {String(current + 1).padStart(2, "0")} -{" "}
-          {String(slides.length).padStart(2, "0")}
+          {String(current + 1).padStart(2, "0")}{" "}
+          <span className={styles.tiny}>
+            {String(slides.length).padStart(2, "0")}
+          </span>
         </SlideUp>
       </div>
-      {started && <div className={styles.progress}></div>}
     </div>
   );
 };
