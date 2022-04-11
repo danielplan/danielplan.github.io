@@ -1,7 +1,7 @@
 import styles from "@styles/modules/Introduction.module.scss";
 import GradientText from "@components/atoms/GradientText";
 import Button from "@components/atoms/Button";
-import SlideUp from "@components/animations/SlideUp";
+import SlideIn from "@components/animations/SlideIn";
 import Slider from "@components/layout/Slider";
 
 const Introduction = (): JSX.Element => {
@@ -21,12 +21,12 @@ const Introduction = (): JSX.Element => {
           <div className={styles.text}>
             <h1>
               <div className="tiny-text">
-                <SlideUp>Hey I&apos;m</SlideUp>
+                <SlideIn>Hey I&apos;m</SlideIn>
               </div>
               <div className="special">
-                <SlideUp delay={300}>
+                <SlideIn delay={300}>
                   daniel <GradientText text="plan" />
-                </SlideUp>
+                </SlideIn>
               </div>
             </h1>
             <Button href="/portfolio" arrowRight>

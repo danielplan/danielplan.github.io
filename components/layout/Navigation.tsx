@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { FC } from "react";
 import styles from "@styles/layout/Navigation.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";

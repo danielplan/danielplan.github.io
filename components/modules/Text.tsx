@@ -1,4 +1,4 @@
-import SlideUp from "@components/animations/SlideUp";
+import SlideIn from "@components/animations/SlideIn";
 import GradientText from "@components/atoms/GradientText";
 import styles from "@styles/modules/Text.module.scss";
 import { ReactNode } from "react";
@@ -24,16 +24,18 @@ const Text = ({
             <h2>
               {smallHeading && (
                 <div className="tiny-text">
-                  <SlideUp>{smallHeading}</SlideUp>
+                  <SlideIn>{smallHeading}</SlideIn>
                 </div>
               )}
               {(largeHeadingWhite || largeHeadingColor) && (
-                <SlideUp delay={300}>
-                  {largeHeadingWhite}{" "}
-                  {largeHeadingColor && (
-                    <GradientText text={largeHeadingColor} />
-                  )}
-                </SlideUp>
+                <SlideIn delay={300}>
+                  <div className="special">
+                    {largeHeadingWhite}{" "}
+                    {largeHeadingColor && (
+                      <GradientText text={largeHeadingColor} />
+                    )}
+                  </div>
+                </SlideIn>
               )}
             </h2>
           </div>

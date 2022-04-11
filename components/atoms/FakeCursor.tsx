@@ -6,8 +6,8 @@ const FakeCursor = (): JSX.Element => {
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (cursor.current) {
-        const mouseY = e.offsetY;
-        const mouseX = e.offsetX;
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
         const element = e.target as HTMLElement;
         cursor.current.style.display = "block";
         if (mouseX && mouseY) {

@@ -1,12 +1,13 @@
-import styles from "@styles/animations/SlideUp.module.scss";
+import styles from "@styles/animations/SlideIn.module.scss";
 import { ReactNode, useEffect, useRef, useState } from "react";
 
 interface Props {
   children: ReactNode;
   delay?: number;
+  direction?: "up" | "down" | "right" | "left";
 }
 
-const SlideUp = ({ children, delay }: Props): JSX.Element => {
+const SlideUp = ({ children, delay, direction = "up" }: Props): JSX.Element => {
   const element = useRef(null);
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -25,7 +26,7 @@ const SlideUp = ({ children, delay }: Props): JSX.Element => {
       <div
         style={delay ? { animationDelay: `${delay}ms` } : undefined}
         ref={element}
-        className={visible ? styles.animate : ""}
+        className={visible ? styles[`slide-${direction}`] : ""}
       >
         {children}
       </div>

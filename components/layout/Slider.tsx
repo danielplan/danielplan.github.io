@@ -1,7 +1,7 @@
 import styles from "@styles/layout/Slider.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import SlideUp from "@components/animations/SlideUp";
+import SlideIn from "@components/animations/SlideIn";
 
 interface Slide {
   label: string;
@@ -52,12 +52,12 @@ const Slider = ({ slides }: Props): JSX.Element => {
       ))}
       {transitionState > 0 && <div className={styles.transitionBox}></div>}
       <div className={styles.legend}>
-        <SlideUp>
+        <SlideIn>
           {String(current + 1).padStart(2, "0")}{" "}
           <span className={styles.tiny}>
             {String(slides.length).padStart(2, "0")}
           </span>
-        </SlideUp>
+        </SlideIn>
       </div>
     </div>
   );

@@ -31,6 +31,18 @@ a {
   }
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $font-weight-black;
+
+  .special {
+    font-family: $font-family-heading;
+  }
+}
 
 h1 {
   font-size: 110px;
@@ -40,10 +52,6 @@ h1 {
     line-height: 1.2;
     font-size: 36px;
     text-transform: uppercase;
-  }
-
-  .special {
-    font-family: $font-family-heading;
   }
 }
 
@@ -59,7 +67,4 @@ h2 {
     font-weight: $font-weight-semi;
   }
 
-  .special {
-    font-family: $font-family-heading;
-  }
 }
