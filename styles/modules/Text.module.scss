@@ -1,8 +1,25 @@
 .module {
+    padding-bottom: 100px;
+    padding-top: 150px;
+    position: relative;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        right: 5%;
+        z-index: 0;
+        top: 0;
+        bottom: 0;
+        background: rgba($white, 0.025);
+
+    }
+
+
     .inner {
         display: flex;
-        margin-bottom: 100px;
-        margin-top: 100px;
+        position: relative;
+        z-index: 1;
 
         .text {
             width: 60%;
