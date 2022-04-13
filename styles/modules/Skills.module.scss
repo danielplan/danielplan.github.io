@@ -1,0 +1,47 @@
+.module {
+    position: relative;
+
+    .inner {
+        padding: 150px 0;
+        position: sticky;
+        height: 100vh;
+        top: 0;
+    }
+
+    h2 {
+        margin-bottom: 50px;
+    }
+
+    .skill {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+        .name {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            font-size: 96px;
+            font-weight: $font-weight-bold;
+            text-transform: uppercase;
+            font-family: $font-family-heading;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    }
+
+    .image {
+        height: 60vh;
+        min-height: 300px;
+        width: calc(100%/3 - 20px);
+        position: relative;
+
+        &:nth-child(3n) {
+            margin-top: 20px;
+        }
+
+        &:nth-child(3n + 1) {
+            margin-top: 40px;
+        }
+    }
+}

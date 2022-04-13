@@ -11,8 +11,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/logo.svg" />
       </Head>
       <Navigation />
-      <FakeCursor />
       <Component {...pageProps} />
+      <FakeCursor />
     </>
   );
 }

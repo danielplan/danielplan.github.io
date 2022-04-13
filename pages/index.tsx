@@ -3,6 +3,7 @@ import Head from "next/head";
 import styles from "@styles/pages/Home.module.scss";
 import Introduction from "@components/modules/Introduction";
 import Text from "@components/modules/Text";
+import Skills from "@components/modules/Skills";
 
 const Home: NextPage = () => {
   return (
@@ -23,6 +24,7 @@ const Home: NextPage = () => {
           <b>enim ad</b> minim veniam, quis nostrud exercitation ullamco laboris
           nisi ut aliquip ex ea commodo consequat.
         </Text>
+        <Skills />
       </main>
     </>
   );

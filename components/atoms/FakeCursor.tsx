@@ -1,21 +1,22 @@
 import styles from "@styles/atoms/FakeCursor.module.scss";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const FakeCursor = (): JSX.Element => {
   const cursor = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const moveCursor = (e: MouseEvent) => {
       if (cursor.current) {
-        const mouseX = e.pageX;
-        const mouseY = e.pageY;
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
         const element = e.target as HTMLElement;
         cursor.current.style.display = "block";
         if (mouseX && mouseY) {
+          cursor.current.style.transform = ``;
           if (parentHasClass("clickable", element)) {
-            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(4)`;
-          } else {
-            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
+            cursor.current.style.transform = `scale(4)`;
           }
+          cursor.current.style.left = `${mouseX}px`;
+          cursor.current.style.top = `${mouseY}px`;
         }
       }
     };
@@ -32,7 +33,11 @@ const FakeCursor = (): JSX.Element => {
       window.removeEventListener("mouseout", removeCursor);
     };
   }, [cursor]);
-  return <div className={styles.cursor} ref={cursor}></div>;
+  return (
+    <div className={styles.container}>
+      <div className={styles.cursor} ref={cursor}></div>
+    </div>
+  );
 };
 
 function parentHasClass(className: string, element: HTMLElement): boolean {
