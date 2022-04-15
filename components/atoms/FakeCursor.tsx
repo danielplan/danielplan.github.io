@@ -1,5 +1,5 @@
 import styles from "@styles/atoms/FakeCursor.module.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 const FakeCursor = (): JSX.Element => {
   const cursor = useRef<HTMLDivElement>(null);
@@ -13,10 +13,10 @@ const FakeCursor = (): JSX.Element => {
         if (mouseX && mouseY) {
           cursor.current.style.transform = ``;
           if (parentHasClass("clickable", element)) {
-            cursor.current.style.transform = `scale(4)`;
+            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(4)`;
+          } else {
+            cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
           }
-          cursor.current.style.left = `${mouseX}px`;
-          cursor.current.style.top = `${mouseY}px`;
         }
       }
     };
