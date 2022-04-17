@@ -12,11 +12,11 @@ const skills = [
 ];
 
 const Skills = (): JSX.Element => {
-  const container = useRef<HTMLElement>(null);
+  const container = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    window.addEventListener("scroll", (e) => {
+    const handler = () => {
       if (
         container.current &&
         document.documentElement.scrollTop >= container.current.offsetTop &&
@@ -34,7 +34,11 @@ const Skills = (): JSX.Element => {
           )
         );
       }
-    });
+    };
+    window.addEventListener("scroll", handler);
+    return () => {
+      window.removeEventListener("scroll", handler);
+    };
   }, [container]);
 
   return (
@@ -48,11 +52,11 @@ const Skills = (): JSX.Element => {
           <div className={styles.content}>
             <h2>
               <div className="tiny-text">
-                <SlideIn>I do some</SlideIn>
+                <SlideIn>This is</SlideIn>
               </div>
               <SlideIn delay={300}>
                 <div className={"special " + styles.large}>
-                  <GradientText text="things" />
+                  what I <GradientText text="do" />
                 </div>
               </SlideIn>
             </h2>

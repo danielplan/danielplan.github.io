@@ -4,6 +4,8 @@ import styles from "@styles/pages/Home.module.scss";
 import Introduction from "@components/modules/Introduction";
 import Text from "@components/modules/Text";
 import Skills from "@components/modules/Skills";
+import ScrollingText from "@components/modules/ScrollingText";
+import Button from "@components/atoms/Button";
 
 const Home: NextPage = () => {
   return (
@@ -25,6 +27,12 @@ const Home: NextPage = () => {
           nisi ut aliquip ex ea commodo consequat.
         </Text>
         <Skills />
+        <ScrollingText whiteText="have a look at my" coloredText="work" />
+        <div className="container centered">
+          <Button href="/portfolio" arrowRight>
+            Explore my work
+          </Button>
+        </div>
       </main>
     </>
   );
