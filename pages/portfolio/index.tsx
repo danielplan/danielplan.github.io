@@ -1,11 +1,15 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "@styles/pages/Portfolio.module.scss";
 import Title from "@components/modules/Title";
 import ReferenceLarge from "@components/modules/ReferenceLarge";
 import ReferenceSmall from "@components/modules/ReferenceSmall";
+import { PrismaClient, Reference } from "@prisma/client";
 
-const Portfolio: NextPage = () => {
+interface Props {
+  references: Reference[];
+}
+
+const Portfolio = ({ references }: Props) => {
   return (
     <>
       <Head>
@@ -18,41 +22,33 @@ const Portfolio: NextPage = () => {
           largeHeadingWhite="my"
           largeHeadingColor="Portfolio"
         />
-        <ReferenceLarge
-          reference={{
-            id: "x",
-            name: "wastend",
-            description: "some project",
-            slug: "wastend",
-            create_date: new Date(),
-            preview_image: "/image.jpg",
-          }}
-          subtitle="Most recent"
-        />
-        <ReferenceSmall
-          reference={{
-            id: "x",
-            name: "wastend",
-            description: "some project",
-            slug: "wastend",
-            create_date: new Date(),
-            preview_image: "/image.jpg",
-          }}
-        />
-        <ReferenceSmall
-          textRight
-          reference={{
-            id: "x",
-            name: "wastend",
-            description: "some project",
-            slug: "wastend",
-            create_date: new Date(),
-            preview_image: "/image.jpg",
-          }}
-        />
+        {references && references[0] && (
+          <ReferenceLarge reference={references[0]} subtitle="Most recent" />
+        )}
+        {references.slice(1).map((reference, i) => (
+          <ReferenceSmall
+            key={reference.id}
+            reference={reference}
+            textRight={i % 2 == 1}
+          />
+        ))}
       </main>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const prisma = new PrismaClient();
+  const references = await prisma.reference.findMany({
+    include: { categories: { include: { Category: true } } },
+    orderBy: {
+      create_date: "desc",
+    },
+  });
+
+  return {
+    props: { references },
+  };
+}
 
 export default Portfolio;

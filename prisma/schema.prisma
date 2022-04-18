@@ -12,14 +12,21 @@ model Reference {
   name          String
   description   String
   slug          String              @unique
-  create_date   DateTime            @default(now())
+  create_date   String              @default("2022-08-31")
   preview_image String
   categories    ReferenceCategory[]
 }
 
+model Category {
+  id         String              @id @default(uuid())
+  name       String
+  references ReferenceCategory[]
+}
+
 model ReferenceCategory {
   id          String     @id @default(uuid())
-  name        String
   Reference   Reference? @relation(fields: [referenceId], references: [id])
   referenceId String?
+  Category    Category?  @relation(fields: [categoryId], references: [id])
+  categoryId  String?
 }

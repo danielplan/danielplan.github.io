@@ -30,7 +30,7 @@ const ReferenceSmall = ({ reference, textRight }: Props): JSX.Element => {
             <div className={styles.top}>
               <SlideIn direction={textRight ? "right" : "left"}>
                 <div className={styles.year}>
-                  {reference.create_date.getFullYear()}
+                  {new Date(reference.create_date).getFullYear()}
                 </div>
               </SlideIn>
             </div>
