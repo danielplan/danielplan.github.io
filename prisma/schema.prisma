@@ -8,10 +8,18 @@ datasource db {
 }
 
 model Reference {
-  id            String   @id @default(uuid())
+  id            String              @id @default(uuid())
   name          String
   description   String
-  slug          String   @unique
-  create_date   DateTime @default(now())
+  slug          String              @unique
+  create_date   DateTime            @default(now())
   preview_image String
+  categories    ReferenceCategory[]
+}
+
+model ReferenceCategory {
+  id          String     @id @default(uuid())
+  name        String
+  Reference   Reference? @relation(fields: [referenceId], references: [id])
+  referenceId String?
 }
