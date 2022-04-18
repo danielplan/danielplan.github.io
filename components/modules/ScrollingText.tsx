@@ -14,18 +14,19 @@ const ScrollingText = ({ whiteText, coloredText }: Props): JSX.Element => {
   useEffect(() => {
     const handler = () => {
       if (text.current && container.current) {
-        const offset = container.current.offsetTop - window.innerHeight * 0.5;
+        const top = container.current.offsetTop - window.innerHeight;
+        const bottom = container.current.offsetTop - window.innerHeight * 0.25;
         if (
-          document.documentElement.scrollTop >= offset &&
-          document.documentElement.scrollTop <= offset + window.innerHeight
+          document.documentElement.scrollTop >= top - 200 &&
+          document.documentElement.scrollTop <= bottom - 200
         ) {
           const width =
             text.current.offsetWidth -
             (text.current.parentElement?.offsetWidth ?? 0) +
             20;
+
           const percentage = Math.min(
-            (document.documentElement.scrollTop - offset) /
-              text.current.scrollHeight,
+            (document.documentElement.scrollTop - top) / (bottom - top),
             1
           );
 
