@@ -1,0 +1,39 @@
+.inner {
+    display: flex;
+    height: 80vh;
+    min-height: 500px;
+}
+
+.image {
+    height: 100%;
+    width: 75%;
+    position: relative;
+}
+
+.heading {
+    width: 25%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.text {
+    position: absolute;
+    transform: rotate(270deg);
+    transform-origin: bottom left;
+    left: 100%;
+    text-transform: uppercase;
+    width: 80vh;
+    min-width: 600px;
+
+    h1 {
+        font-size: 128px;
+        font-family: $font-family-heading;
+    }
+
+    .subtitle {
+        font-size: 36px;
+    }
+}
