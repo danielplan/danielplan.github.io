@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "@styles/pages/Portfolio.module.scss";
 import { PrismaClient, Reference } from "@prisma/client";
 import ImageRotatedTitle from "@components/modules/ImageRotatedTitle";
+import Text from "@components/modules/Text";
 
 interface Props {
   reference: Reference;
@@ -20,6 +21,9 @@ const Reference = ({ reference }: Props) => {
           heading={reference.name}
           subtitle={reference.description}
         />
+        <Text smallHeading="What is" largeHeadingColor={reference.name + "?"}>
+          {reference.description}
+        </Text>
       </main>
     </>
   );

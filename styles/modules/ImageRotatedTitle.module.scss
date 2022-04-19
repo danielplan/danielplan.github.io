@@ -1,7 +1,11 @@
+$height: calc(100vh - 190px - 100px);
+$minHeight: 500px;
+
 .inner {
     display: flex;
-    height: 80vh;
-    min-height: 500px;
+    height: $height;
+    min-height: $minHeight;
+    margin-bottom: 200px;
 }
 
 .image {
@@ -24,11 +28,11 @@
     transform: rotate(270deg);
     transform-origin: bottom left;
     left: 100%;
-    text-transform: uppercase;
-    width: 80vh;
-    min-width: 600px;
+    width: $height;
+    min-width: $minHeight;
 
     h1 {
+        text-transform: uppercase;
         font-size: 128px;
         font-family: $font-family-heading;
     }
