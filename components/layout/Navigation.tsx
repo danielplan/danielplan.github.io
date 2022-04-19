@@ -44,7 +44,7 @@ const Navigation = (): JSX.Element => {
               <Link key={i} href={item.href} passHref>
                 <a
                   className={
-                    (router.pathname === item.href
+                    (router.asPath.match(new RegExp(`^${item.href}(/.+)*$`))
                       ? styles.active
                       : undefined) + " clickable"
                   }
