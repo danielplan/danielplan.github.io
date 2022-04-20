@@ -10,10 +10,15 @@ datasource db {
 model Reference {
   id            String              @id @default(uuid())
   name          String
+  slogan        String
   description   String
   slug          String              @unique
-  create_date   String              @default("2022-08-31")
   preview_image String
+  preview_video String?
+  details       String
+  images        String?
+  video         String?
+  create_date   String              @default("2022-08-31")
   categories    ReferenceCategory[]
 }
 
@@ -29,4 +34,14 @@ model ReferenceCategory {
   referenceId String?
   Category    Category?  @relation(fields: [categoryId], references: [id])
   categoryId  String?
+}
+
+model Post {
+  id            String @id @default(uuid())
+  name          String
+  preview_image String
+  slug          String @unique
+  body          String
+  lead          String
+  create_date   String @default("2022-08-31")
 }
