@@ -1,0 +1,21 @@
+.inner {
+  display: flex;
+  margin: -20px;
+  margin: 200px 0;
+
+}
+
+.item {
+  text-align: center;
+  width: (100% / 4);
+  padding: 20px 80px;
+}
+.title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+.text {
+  line-height: 1.8;
+}
