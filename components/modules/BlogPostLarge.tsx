@@ -14,28 +14,20 @@ const BlogPostLarge = ({ post }: Props): JSX.Element => {
       <div className="container">
         <Link href={`/blog/${post.slug}`}>
           <a className={styles.inner + " clickable"}>
-            <div className={styles.content}>
-              <SlideIn>
-                <h2>{post.name}</h2>
-              </SlideIn>
-              <SlideIn>
-                <div className={styles.categories}>{}</div>
-              </SlideIn>
-            </div>
-            <div className={styles.top}>
-              <SlideIn direction="down">
-                <div className={styles.year}>
-                  {new Date(post.create_date).getFullYear()}
-                </div>
-              </SlideIn>
-            </div>
-            <div className={styles.background}>
+            <div className={styles.image}>
               <Image
-                src={post.preview_image}
-                alt=""
-                objectFit="cover"
-                layout="fill"
+                  src={post.preview_image}
+                  alt=""
+                  objectFit="cover"
+                  layout="fill"
               />
+            </div>
+            <div className={styles.content}>
+                <h2>{post.name}</h2>
+              <div className={styles.text}>
+                {post.lead.substring(0, 200)}...
+
+              </div>
             </div>
           </a>
         </Link>

@@ -1,5 +1,4 @@
-import styles from "@styles/modules/Reference.module.scss";
-import SlideIn from "@components/animations/SlideIn";
+import styles from "@styles/modules/BlogPost.module.scss";
 import { Post } from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
