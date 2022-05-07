@@ -75,3 +75,16 @@ h2 {
   }
 
 }
+.three-cols-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -25px;
+  .column {
+    width: (100%/3);
+    padding: 25px;
+  }
+}
+
+.margin-large-top {
+  margin-top: 100px;
+}

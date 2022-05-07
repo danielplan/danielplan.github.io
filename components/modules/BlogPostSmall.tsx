@@ -1,39 +1,36 @@
 import styles from "@styles/modules/BlogPost.module.scss";
-import { Post } from "@prisma/client";
+import {Post} from "@prisma/client";
 import Image from "next/image";
 import Link from "next/link";
 
 interface Props {
-  post: Post;
+    post: Post;
 }
 
-const BlogPostSmall = ({ post }: Props): JSX.Element => {
-  return (
-    <section className={styles.module}>
-      <div className="container">
-        <Link href={`/blog/${post.slug}`}>
-          <a className={`${styles["small-inner"]} clickable`}>
-            <div className={styles.content}>
-              <h2>{post.name}</h2>
-            </div>
-            <div className={styles.top}>
-              <div className={styles.year}>
-                {new Date(post.create_date).getFullYear()}
-              </div>
-            </div>
-            <div className={styles.background}>
-              <Image
-                src={post.preview_image}
-                alt=""
-                objectFit="cover"
-                layout="fill"
-              />
-            </div>
-          </a>
-        </Link>
-      </div>
-    </section>
-  );
+const BlogPostSmall = ({post}: Props): JSX.Element => {
+    const date = new Date(post.create_date);
+    return (
+        <section className={styles.module + " " + styles.small}>
+            <Link href={`/blog/${post.slug}`}>
+                <a className={`${styles["small-inner"]} clickable`}>
+                    <div className={styles.image}>
+                        <Image
+                            src={post.preview_image}
+                            alt=""
+                            objectFit="cover"
+                            layout="fill"
+                        />
+                    </div>
+                    <div className={styles.content}>
+                        <h2>{post.name}</h2>
+                    </div>
+                    <div className={styles.year}>
+                        {date.getDate()}/{date.getMonth()}/{date.getFullYear()}
+                    </div>
+                </a>
+            </Link>
+        </section>
+    );
 };
 
 export default BlogPostSmall;
