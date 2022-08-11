@@ -1,31 +1,45 @@
 .module {
-
-    h1 {
-        margin-bottom: 50px;
+  .inner {
+    @include breakpoint(large) {
+      display: flex;
+      align-items: center;
+      height: 100vh;
     }
 
-    .inner {
-        display: flex;
-        align-items: center;
-        height: calc(100vh - 190px);
-        padding-bottom: 100px;
+    .slider {
+      display: flex;
+      height: 400px;
+      overflow: visible;
+      width: 100%;
+      @include breakpoint(large) {
+        height: 100%;
+        width: calc(50% + 100px);
+        padding: 30px;
+        padding-right: 150px;
+      }
+      @include breakpoint(xlarge) {
+        width: calc(45% + 150px);
+        padding: 40px;
+        padding-right: 200px;
+      }
 
-        .slider {
-            width: 50%;
-            display: flex;
-            height: 100%;
-            overflow: visible;
-            max-height: 650px;
-            padding-right: 150px;
-
-            &>* {
-                height: 100%;
-                width: 100%;
-            }
-        }
-
-        .text {
-            width: 50%;
-        }
+      & > * {
+        height: 100%;
+        width: 100%;
+      }
     }
+
+    .text {
+      max-width: 700px;
+      flex-grow: 1;
+      @include breakpoint(large) {
+        padding-top: 100px;
+        padding-left: 20px;
+      }
+    }
+    p {
+      margin-top: 30px;
+      font-size: clamp(16px, 2vw, 36px);
+    }
+  }
 }

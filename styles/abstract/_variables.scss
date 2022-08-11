@@ -1,21 +1,24 @@
-$primary-color: #FF6056;
-$secondary-color: #6A47F3;
-$gradient: radial-gradient(142.51% 233.83% at 0% 0%, #{$primary-color} 0%, #{$secondary-color} 100%);
-$black: #121212;
-$white: #FBF9FF;
-$background: linear-gradient(90deg, #0A090F 0%, #0D0723 100%);
+$primary-color: #ff6056;
+$secondary-color: #ca83eb;
+$gradient: radial-gradient(
+  142.51% 233.83% at 0% 0%,
+  #{$primary-color} 0%,
+  #6a47f3 100%
+);
+$black: #2e2c38;
+$white: #fbf9ff;
+$background: linear-gradient(90deg, #0a090f 0%, #0d0723 100%);
 
-$container-max-width-md: 1200px;
-$container-max-width: 1400px;
+$container-max-width: 1600px;
 
-$breakpoints: ('small': 360px,
-    'medium': 820px,
-    'large': 1280px,
-    'xlarge': 1620px);
+$breakpoints: (
+  "small": 360px,
+  "medium": 820px,
+  "large": 1280px,
+  "xlarge": 1820px,
+);
 
 $font-weight-semi: 600;
 $font-weight-bold: 700;
-$font-weight-black: 800;
 
-$font-family-heading: 'Poppins',
-sans-serif;
+$font-family-heading: "Poppins", sans-serif;

@@ -5,9 +5,14 @@ import { useEffect, useRef } from "react";
 interface Props {
   whiteText?: string;
   coloredText?: string;
+  description?: string;
 }
 
-const ScrollingText = ({ whiteText, coloredText }: Props): JSX.Element => {
+const ScrollingText = ({
+  whiteText,
+  coloredText,
+  description,
+}: Props): JSX.Element => {
   const text = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLElement>(null);
 
@@ -41,11 +46,16 @@ const ScrollingText = ({ whiteText, coloredText }: Props): JSX.Element => {
   }, [text]);
   return (
     <section className={styles.module} ref={container}>
-      <div className="container">
-        <div className={styles.text} ref={text}>
-          {whiteText}
-          {coloredText && <GradientText text={" " + coloredText} />}
+      <div className={styles.inner}>
+        <div className="container">
+          <div className={styles.text} ref={text}>
+            {whiteText}
+            {coloredText && <GradientText text={" " + coloredText} />}
+          </div>
         </div>
+      </div>
+      <div className="container">
+        {description && <p className={styles.description}>{description}</p>}
       </div>
     </section>
   );

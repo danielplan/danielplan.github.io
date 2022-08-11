@@ -6,6 +6,8 @@ import Text from "@components/modules/Text";
 import Skills from "@components/modules/Skills";
 import ScrollingText from "@components/modules/ScrollingText";
 import Button from "@components/atoms/Button";
+import BigText from "@components/modules/BigText";
+import GradientText from "@components/atoms/GradientText";
 
 const Home: NextPage = () => {
   return (
@@ -16,18 +18,15 @@ const Home: NextPage = () => {
       </Head>
       <main className={styles.main}>
         <Introduction />
-        <Text
-          smallHeading="get to"
-          largeHeadingWhite="know"
-          largeHeadingColor="me"
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-          <b>enim ad</b> minim veniam, quis nostrud exercitation ullamco laboris
-          nisi ut aliquip ex ea commodo consequat.
-        </Text>
+        <BigText>
+          I’m a <GradientText text="computer science" /> student from Italy.
+        </BigText>
         <Skills />
-        <ScrollingText whiteText="have a look at my" coloredText="work" />
+        <ScrollingText
+          whiteText="have a look at my"
+          coloredText="work"
+          description="Let’s have a look at some of the work I created."
+        />
         <div className="container centered">
           <Button href="/portfolio" arrowRight>
             Explore my work

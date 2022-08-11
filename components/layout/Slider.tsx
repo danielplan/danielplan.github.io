@@ -2,10 +2,13 @@ import styles from "@styles/layout/Slider.module.scss";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import SlideIn from "@components/animations/SlideIn";
+import Link from "next/link";
 
 interface Slide {
   label: string;
   image: string;
+  color: string;
+  link: string;
 }
 
 interface Props {
@@ -36,19 +39,30 @@ const Slider = ({ slides }: Props): JSX.Element => {
       }`}
     >
       {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`${styles.slide}
+        <Link href={slide.link} key={i}>
+          <div
+            className={`${styles.slide}
           ${current == i ? styles.current : ""}
            clickable`}
-        >
-          <div className={styles.image}>
-            <Image src={slide.image} alt="" layout="fill" objectFit="cover" />
+          >
+            <div
+              className={styles.image}
+              style={{ backgroundColor: slide.color }}
+            >
+              <div className={styles["image-inner"]}>
+                <Image
+                  src={slide.image}
+                  alt=""
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+            <div className={styles.label}>
+              <span>{slide.label}</span>
+            </div>
           </div>
-          <div className={styles.label}>
-            <span>{slide.label}</span>
-          </div>
-        </div>
+        </Link>
       ))}
       {transitionState > 0 && <div className={styles.transitionBox}></div>}
       <div className={styles.legend}>

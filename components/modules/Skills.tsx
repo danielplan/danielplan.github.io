@@ -6,9 +6,57 @@ import { useEffect, useRef, useState } from "react";
 
 const slideHeight = 600;
 const skills = [
-  { label: "Photography", images: ["/image.jpg", "/image.jpg", "/image.jpg"] },
-  { label: "Design", images: ["/image2.jpg", "/image.jpg", "/image.jpg"] },
-  { label: "Development", images: ["/image.jpg", "/image.jpg", "/image2.jpg"] },
+  {
+    label: "Development",
+    references: [
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+    ],
+  },
+  {
+    label: "Photography",
+    references: [
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+    ],
+  },
+  {
+    label: "Design",
+    references: [
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+      {
+        color: "#E9FFFF",
+        image: "/image.png",
+      },
+    ],
+  },
 ];
 
 const Skills = (): JSX.Element => {
@@ -56,7 +104,7 @@ const Skills = (): JSX.Element => {
               </div>
               <SlideIn delay={300}>
                 <div className={"special " + styles.large}>
-                  what I <GradientText text="do" />
+                  <GradientText text="what I do" />
                 </div>
               </SlideIn>
             </h2>
@@ -72,17 +120,25 @@ const Skills = (): JSX.Element => {
                   <div key={i} className={styles["label-outer"]}>
                     <div className={styles.label}>{skill.label}</div>
                   </div>
-                  {skill.images.map((image, i) => (
-                    <div key={i} className={styles["img-outer"]}>
-                      <div className={styles["image-animation"]}></div>
-                      <div className={styles.image}>
-                        <Image
-                          src={image}
-                          alt=""
-                          layout="fill"
-                          objectFit="cover"
-                        />
+                  {skill.references.map((reference, i) => (
+                    <div key={i} className={styles["reference-container"]}>
+                      <div
+                        className={styles.image}
+                        style={{ backgroundColor: reference.color }}
+                      >
+                        <div
+                          className={styles["image-inner"]}
+                          style={{ backgroundColor: reference.color }}
+                        >
+                          <Image
+                            src={reference.image}
+                            alt=""
+                            layout="fill"
+                            objectFit="contain"
+                          />
+                        </div>
                       </div>
+                      <div className={styles["image-animation"]}></div>
                     </div>
                   ))}
                 </div>

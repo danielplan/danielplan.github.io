@@ -1,23 +1,23 @@
 .cursor {
-    width: 20px;
-    height: 20px;
-    margin-left: -10px;
-    margin-top: -10px;
-    border-radius: 50%;
-    position: absolute;
-    pointer-events: none;
-    transition: transform 100ms ease;
-    z-index: 1000;
-    opacity: 0.75;
-    backdrop-filter: invert(1);
+  width: 20px;
+  height: 20px;
+  margin-left: -10px;
+  margin-top: -10px;
+  border-radius: 50%;
+  position: absolute;
+  pointer-events: none;
+  transition: transform 100ms ease;
+  z-index: 10000;
+  backdrop-filter: invert(1);
+  opacity: 0.75;
 }
 
 .container {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
-    overflow: hidden;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
 }

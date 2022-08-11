@@ -32,29 +32,27 @@ const Navigation = (): JSX.Element => {
 
   return (
     <header className={styles.header}>
-      <div className="container">
-        <div className={styles.content}>
-          <Link href="/">
-            <a>
-              <Image src="/logo.svg" alt="" width={60} height={60} />
-            </a>
-          </Link>
-          <nav className={styles.nav}>
-            {menu.map((item, i) => (
-              <Link key={i} href={item.href} passHref>
-                <a
-                  className={
-                    (router.asPath.match(new RegExp(`^${item.href}(/.+)*$`))
-                      ? styles.active
-                      : undefined) + " clickable"
-                  }
-                >
-                  {item.label}
-                </a>
-              </Link>
-            ))}
-          </nav>
-        </div>
+      <div className={styles.content}>
+        <Link href="/">
+          <a className={styles.logo + " clickable"}>
+            <Image src="/logo.svg" alt="" layout="fill" objectFit="contain" />
+          </a>
+        </Link>
+        <nav className={styles.nav}>
+          {menu.map((item, i) => (
+            <Link key={i} href={item.href} passHref>
+              <a
+                className={
+                  (router.asPath.match(new RegExp(`^${item.href}(/.+)*$`))
+                    ? styles.active
+                    : undefined) + " clickable"
+                }
+              >
+                {item.label}
+              </a>
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );

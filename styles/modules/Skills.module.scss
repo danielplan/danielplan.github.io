@@ -1,197 +1,208 @@
 .module {
+  position: relative;
+
+  .inner {
+    padding: 80px 0;
+    position: sticky;
+    min-height: 100vh;
+    top: 0;
+    text-align: center;
+
+    & > div {
+      height: 100%;
+    }
+  }
+
+  h2 {
+    margin-bottom: 50px;
+
+    .large {
+      font-size: 86px;
+    }
+  }
+
+  .skills {
     position: relative;
+    height: 100%;
+    flex-grow: 1;
+    height: 70vh;
+    min-height: 300px;
+  }
 
+  .content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
 
-    .inner {
-        padding: 120px 0;
-        position: sticky;
-        height: 100vh;
-        top: 0;
-        text-align: center;
-
-        &>div {
-            height: 100%;
-        }
+  .skill {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    position: relative;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    @include breakpoint(medium) {
+      flex-direction: row;
     }
+  }
 
-    h2 {
-        margin-bottom: 50px;
-
-        .large {
-            font-size: 86px;
-        }
+  .reference-container {
+    width: 100%;
+    height: 32%;
+    @include breakpoint(medium) {
+      width: calc(100% / 3);
+      height: 100%;
     }
-
-    .skills {
+    position: relative;
+    z-index: 0;
+    .image {
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .image-inner {
         position: relative;
-        height: 100%;
-        flex-grow: 1;
-    }
-
-    .content {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
-
-    .skill {
-        display: flex;
-        justify-content: space-between;
-        position: relative;
-        position: absolute;
         width: 100%;
         height: 100%;
-        left: 0;
-        top: 0;
+        @include breakpoint(large) {
+          width: 80%;
+          height: 80%;
+        }
+      }
     }
 
-    .img-outer {
-        width: calc(100%/3 - 15px);
-        position: relative;
-        height: 60vh;
-        min-height: 300px;
-
-        &:nth-child(3n) {
-            margin-top: 20px;
-        }
-
-        &:nth-child(3n + 1) {
-            margin-top: 40px;
-        }
+    &:not(:nth-child(3n)) {
+      transform: scale(0.9);
     }
+  }
 
-    .label-outer {
-        position: relative;
-        overflow: hidden;
-        top: 50%;
-        left: 50%;
-        position: absolute;
-        font-size: 128px;
-        font-weight: $font-weight-bold;
-        text-transform: uppercase;
-        font-family: $font-family-heading;
-        transform: translate(-50%, -50%);
-        z-index: 2;
+  .label-outer {
+    position: relative;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    font-size: clamp(36px, 10vw, 96px);
+    font-weight: $font-weight-bold;
+    font-family: $font-family-heading;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 
-        .label {
-            line-height: 1;
-        }
+    .label {
+      line-height: 1;
+      border-radius: 5px;
+      padding: 20px;
     }
+  }
 }
 
 .skill {
-    visibility: hidden;
+  visibility: hidden;
 
-    .image-animation {
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: 1;
+  .image-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
 
-        &:before {
-            content: ' ';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: $secondary-color;
-            transform: scaleY(1);
-            transition: 500ms ease;
-            transform-origin: top;
-            transition-property: visibility, transform;
-        }
+    &:before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: $secondary-color;
+      transform: scaleY(1);
+      transition: 500ms ease;
+      transform-origin: top;
+      transition-property: visibility, transform;
     }
+  }
 
+  .label {
+    transition: 300ms ease;
+    transition-property: transform, visibility;
+  }
+
+  .image {
+    transition: 500ms ease;
+    transition-property: visibility;
+  }
+
+  &.current {
+    visibility: visible;
+  }
+
+  &.previous {
+    &:before {
+      transform: scaleY(1);
+      visibility: hidden;
+    }
+  }
+
+  .label {
+    animation: slide-out 300ms ease-out forwards;
+  }
+  &.next {
+    .image-animation {
+      &:before {
+        transform: scaleY(1);
+        visibility: hidden;
+      }
+    }
 
     .label {
-        transition: 300ms ease;
-        transition-property: transform, visibility;
+      animation: slide-out 300ms ease-out forwards;
     }
+  }
 
+  &.current {
+    .image-animation {
+      &:before {
+        transform-origin: bottom;
+        transition-delay: 500ms;
+        transform: scaleY(0);
+      }
+    }
     .image {
-        transition: 500ms ease;
-        transition-property: visibility;
+      transition-delay: 500ms;
     }
-
-    &.current {
-        visibility: visible;
-
+    .label {
+      animation: slide-in 300ms ease-out forwards;
     }
-
-    &.previous {
-
-        .image-animation {
-            &:before {
-                transform: scaleY(1);
-                visibility: hidden;
-            }
-        }
-
-
-        .label {
-            animation: slide-out 300ms ease-out forwards;
-        }
-    }
-
-    &.next {
-        .image-animation {
-            &:before {
-                transform: scaleY(1);
-                visibility: hidden;
-            }
-        }
-
-
-        .label {
-            animation: slide-out 300ms ease-out forwards;
-        }
-    }
-
-
-    &.current {
-        .image-animation {
-            &:before {
-                transform-origin: bottom;
-                transition-delay: 500ms;
-                transform: scaleY(0);
-            }
-        }
-
-        .image {
-            transition-delay: 500ms;
-        }
-
-        .label {
-            animation: slide-in 300ms ease-out forwards;
-        }
-    }
+  }
 }
 
 @keyframes slide-in {
-    0% {
-        opacity: 0;
-        transform: translateY(-100%);
-    }
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
 
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slide-out {
-    0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
-    100% {
-        opacity: 0;
-        transform: translateY(100%);
-    }
-
+  100% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
 }

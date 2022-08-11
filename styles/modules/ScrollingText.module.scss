@@ -1,17 +1,22 @@
-.module {
-    position: relative;
-    height: 200px;
-    overflow: hidden;
-    margin-bottom: 50px;
+.inner {
+  position: relative;
+  height: clamp(48px, 10vw, 200px);
+  overflow: hidden;
 }
 
 .text {
-    font-size: 128px;
-    position: absolute;
-    bottom: 0;
-    text-transform: uppercase;
-    font-weight: $font-weight-bold;
-    font-family: $font-family-heading;
-    white-space: nowrap;
-    transition: 300ms linear transform;
+  font-size: clamp(36px, 9vw, 128px);
+  position: absolute;
+  bottom: 0;
+  text-transform: uppercase;
+  font-weight: $font-weight-bold;
+  font-family: $font-family-heading;
+  white-space: nowrap;
+  transition: 300ms linear transform;
+}
+
+.description {
+  margin-bottom: 50px;
+  text-align: center;
+  font-size: clamp(16px, 3vw, 36px);
 }

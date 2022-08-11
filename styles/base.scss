@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;0,800;1,400&family=Poppins:wght@700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Poppins:wght@700&display=swap");
 
 html,
 body {
-  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  background: $background;
-  color: $white;
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: $white;
+  color: $black;
   font-size: 18px;
 }
 
@@ -21,20 +21,20 @@ a {
 }
 
 .container {
-  max-width: $container-max-width-md;
+  max-width: $container-max-width;
   margin: 0 auto;
   padding: 0 15px;
   width: 100%;
+
+  @include breakpoint(medium) {
+    padding: 0 30px;
+  }
 
   &.centered {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-  }
-
-  @include breakpoint(xlarge) {
-    max-width: $container-max-width;
   }
 }
 
@@ -44,7 +44,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: $font-weight-black;
+  font-weight: $font-weight-bold;
 
   .special {
     font-family: $font-family-heading;
@@ -52,12 +52,12 @@ h6 {
 }
 
 h1 {
-  font-size: 110px;
+  font-size: clamp(48px, 7vw, 110px);
   line-height: 1;
 
   .tiny-text {
     line-height: 1.2;
-    font-size: 36px;
+    font-size: clamp(24px, 4vw, 36px);
     text-transform: uppercase;
   }
 }
@@ -66,14 +66,13 @@ h2 {
   font-size: 64px;
   line-height: 1;
   text-transform: uppercase;
-  font-weight: $font-weight-black;
+  font-weight: $font-weight-bold;
 
   .tiny-text {
     line-height: 1.2;
     font-size: 24px;
     font-weight: $font-weight-semi;
   }
-
 }
 .three-cols-grid {
   display: flex;
@@ -87,4 +86,8 @@ h2 {
 
 .margin-large-top {
   margin-top: 100px;
+}
+
+p {
+  line-height: 1.6;
 }
