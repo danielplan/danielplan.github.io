@@ -19,26 +19,29 @@ const ScrollingText = ({
   useEffect(() => {
     const handler = () => {
       if (text.current && container.current) {
-        const top = container.current.offsetTop - window.innerHeight;
-        const bottom = container.current.offsetTop - window.innerHeight * 0.25;
+        const top = container.current.offsetTop - window.innerHeight * 0.75;
+        const bottom = container.current.offsetTop - window.innerHeight * 0.5;
         if (
-          document.documentElement.scrollTop >= top - 200 &&
-          document.documentElement.scrollTop <= bottom - 200
+          document.documentElement.scrollTop >= top &&
+          document.documentElement.scrollTop <= bottom
         ) {
-          const width =
-            text.current.offsetWidth -
-            (text.current.parentElement?.offsetWidth ?? 0) +
-            20;
-
-          const percentage = Math.min(
-            (document.documentElement.scrollTop - top) / (bottom - top),
-            1
+          const containerWidth = text.current.parentElement?.offsetWidth ?? 0;
+          const padding = parseInt(
+            window.getComputedStyle(text.current.parentElement!).paddingLeft,
+            10
           );
+          const textWidth = text.current.offsetWidth;
 
-          text.current.style.transform = `translateX(${-width * percentage}px)`;
+          const width = containerWidth - padding * 2 - textWidth;
+
+          const percentage =
+            (document.documentElement.scrollTop - top) / (bottom - top);
+
+          text.current.style.transform = `translateX(${width * percentage}px)`;
         }
       }
     };
+    handler();
     window.addEventListener("scroll", handler);
     return () => {
       window.removeEventListener("scroll", handler);

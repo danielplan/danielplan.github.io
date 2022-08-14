@@ -97,8 +97,9 @@
 
     .label {
       line-height: 1;
-      border-radius: 5px;
-      padding: 20px;
+      padding: 30px;
+      min-width: 900px;
+      background: $white;
     }
   }
 }
