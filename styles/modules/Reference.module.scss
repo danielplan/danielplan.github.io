@@ -1,11 +1,11 @@
 .inner {
   display: block;
   position: relative;
-  margin-left: calc(
-    (100vw - #{$container-max-width}) / -2 - #{$container-padding-lg}
-  );
   .image {
     height: 800px;
+    margin-left: calc(
+      (100vw - #{$container-max-width}) / -2 - #{$container-padding-lg}
+    );
   }
 }
 
@@ -16,6 +16,9 @@
 .small-inner {
   position: relative;
   display: block;
+  h2 {
+    font-size: clamp(24px, 8vw, 64px);
+  }
 
   .image {
     height: 400px;

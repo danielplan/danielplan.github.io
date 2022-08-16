@@ -65,6 +65,7 @@ export async function getStaticProps() {
   const references = await prisma.reference.findMany({
     include: { tags: { include: { tag: true } } },
   });
+  prisma.$disconnect();
 
   return {
     props: { references },

@@ -9,6 +9,8 @@
   position: relative;
   font-weight: $font-weight-bold;
   overflow: hidden;
+  font-size: clamp(14px, 3vw, 18px);
+  text-transform: uppercase;
   .background {
     opacity: 0.25;
     position: absolute;

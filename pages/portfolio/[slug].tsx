@@ -2,9 +2,9 @@ import Head from "next/head";
 import styles from "@styles/pages/Portfolio.module.scss";
 import { PrismaClient, Reference } from "@prisma/client";
 import ReferenceDetail from "@components/modules/ReferenceDetail";
-import Gallery from "@components/modules/Gallery";
 import BigText from "@components/modules/BigText";
 import GradientText from "@components/atoms/GradientText";
+import ReferenceGrid from "@components/modules/ReferenceGrid";
 
 interface Props {
   reference: Reference;
@@ -30,12 +30,7 @@ const Reference = ({ reference }: Props) => {
               )
             )}
         </BigText>
-        {reference.images && (
-          <Gallery
-            images={reference.images.split(",")}
-            video={reference.video}
-          />
-        )}
+        <ReferenceGrid reference={reference} />
       </main>
     </>
   );
@@ -57,6 +52,7 @@ export async function getStaticProps({ params }: Params) {
       },
     },
   });
+  prisma.$disconnect();
 
   return {
     props: { reference },
@@ -66,6 +62,7 @@ export async function getStaticProps({ params }: Params) {
 export async function getStaticPaths() {
   const prisma = new PrismaClient();
   const references = await prisma.reference.findMany({});
+  prisma.$disconnect();
   return {
     paths: references.map((reference) => {
       return {
