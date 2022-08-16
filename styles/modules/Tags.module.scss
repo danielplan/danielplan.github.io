@@ -1,0 +1,17 @@
+.inner {
+  display: flex;
+}
+
+.tag {
+  padding: 3px 15px;
+  display: inline-block;
+  border-radius: 3px;
+  position: relative;
+  font-weight: $font-weight-bold;
+  overflow: hidden;
+  .background {
+    opacity: 0.25;
+    position: absolute;
+    inset: 0;
+  }
+}

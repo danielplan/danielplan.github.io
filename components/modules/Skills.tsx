@@ -11,7 +11,7 @@ const skills = [
     references: [
       {
         color: "#E9FFFF",
-        image: "/image.png",
+        image: "/wastend/mobile.png",
       },
       {
         color: "#E9FFFF",

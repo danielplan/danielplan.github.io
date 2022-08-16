@@ -1,0 +1,7 @@
+.reference-list {
+  display: flex;
+  justify-content: space-between;
+  .reference-column {
+    width: calc(50% - 50px);
+  }
+}

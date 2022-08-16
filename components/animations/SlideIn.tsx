@@ -23,7 +23,7 @@ const SlideUp = ({
           setVisible(entries[0].isIntersecting);
         },
         {
-          rootMargin: style === "smooth" ? "-100px 0px -100px 0px" : "0px",
+          rootMargin: style === "smooth" ? "100px  100px 0px" : "0px",
         }
       );
       observer.observe(element.current);

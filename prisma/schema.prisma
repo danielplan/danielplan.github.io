@@ -8,40 +8,43 @@ datasource db {
 }
 
 model Reference {
-  id            String              @id @default(uuid())
-  name          String
-  slogan        String
-  description   String
-  slug          String              @unique
-  preview_image String
-  preview_video String?
-  details       String
-  images        String?
-  video         String?
-  create_date   String              @default("2022-08-31")
-  categories    ReferenceCategory[]
+  id           String         @id @default(uuid())
+  name         String
+  lead         String
+  slug         String         @unique
+  title        String?
+  text         String?
+  previewImage String
+  imageSize    String
+  color        String?
+  link         String?
+  images       String
+  video        String?
+  tags         ReferenceTag[]
 }
 
-model Category {
-  id         String              @id @default(uuid())
+model Tag {
+  id         String         @id @default(uuid())
   name       String
-  references ReferenceCategory[]
+  color      String
+  references ReferenceTag[]
 }
 
-model ReferenceCategory {
-  id          String     @id @default(uuid())
-  Reference   Reference? @relation(fields: [referenceId], references: [id])
-  referenceId String?
-  Category    Category?  @relation(fields: [categoryId], references: [id])
-  categoryId  String?
+model ReferenceTag {
+  reference   Reference @relation(fields: [referenceId], references: [id])
+  referenceId String
+  tag         Tag       @relation(fields: [tagId], references: [id])
+  tagId       String
+
+  @@id([tagId, referenceId])
 }
 
 model Post {
-  id            String @id @default(uuid())
-  name          String
-  preview_image String
-  slug          String @unique
-  body          String
-  lead          String
-  create_date   String @default("2022-08-31")
+  id           String @id @default(uuid())
+  name         String
+  previewImage String
+  slug         String @unique
+  body         String
+  lead         String
+  createDate   String @default("2022-08-31")
 }

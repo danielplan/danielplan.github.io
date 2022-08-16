@@ -40,7 +40,7 @@ const Slider = ({ slides }: Props): JSX.Element => {
     >
       {slides.map((slide, i) => (
         <Link href={slide.link} key={i}>
-          <div
+          <a
             className={`${styles.slide}
           ${current == i ? styles.current : ""}
            clickable`}
@@ -61,7 +61,7 @@ const Slider = ({ slides }: Props): JSX.Element => {
             <div className={styles.label}>
               <span>{slide.label}</span>
             </div>
-          </div>
+          </a>
         </Link>
       ))}
       {transitionState > 0 && <div className={styles.transitionBox}></div>}

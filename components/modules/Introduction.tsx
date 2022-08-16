@@ -11,21 +11,21 @@ const Introduction = (): JSX.Element => {
           <Slider
             slides={[
               {
-                label: "Wastend",
-                image: "/image.png",
+                label: "wastend",
+                image: "/img/references/wastend/mobile.png",
                 color: "#E9FFFF",
                 link: "/portfolio/wastend",
               },
               {
                 label: "ryoko",
-                image: "/image.png",
-                color: "#E9FFFF",
+                image: "/img/references/ryoko/mobile.png",
+                color: "#EAE3FF",
                 link: "/portfolio/ryoko",
               },
               {
                 label: "Hikari",
-                image: "/image.png",
-                color: "#E9FFFF",
+                image: "/img/references/hikari/mobile.png",
+                color: "#E8DDFF",
                 link: "/portfolio/hikari",
               },
             ]}

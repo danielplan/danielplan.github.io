@@ -121,7 +121,7 @@
   &,
   * {
     transition: 1.5s ease;
-    transition-property: opacity, visibility, transform;
+    transition-property: opacity, transform;
   }
 
   &.current {

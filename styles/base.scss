@@ -23,11 +23,11 @@ a {
 .container {
   max-width: $container-max-width;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 $container-padding;
   width: 100%;
 
-  @include breakpoint(medium) {
-    padding: 0 30px;
+  @include breakpoint(large) {
+    padding: 0 $container-padding-lg;
   }
 
   &.centered {
@@ -63,9 +63,8 @@ h1 {
 }
 
 h2 {
-  font-size: 64px;
+  font-size: clamp(36px, 6vw, 96px);
   line-height: 1;
-  text-transform: uppercase;
   font-weight: $font-weight-bold;
 
   .tiny-text {

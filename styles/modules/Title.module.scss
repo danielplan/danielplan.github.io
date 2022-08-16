@@ -1,6 +1,7 @@
 .module {
-  margin: 60px 0 100px 0;
-  padding-top: clamp(80px, 20vw, 200px);
+  margin: 0 0 clamp(50px, 10vw, 200px) 0;
+  padding-top: clamp(100px, 20vw, 300px);
+  text-align: center;
 
   h1 {
     text-transform: uppercase;
