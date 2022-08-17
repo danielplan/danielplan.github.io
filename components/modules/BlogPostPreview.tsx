@@ -5,6 +5,7 @@ import { TaggedPost } from "@pages/blog";
 import CalendarIcon from "/public/img/icons/calendar.svg";
 import ClockIcon from "/public/img/icons/clock.svg";
 import Tags from "./Tags";
+import SlideIn from "@components/animations/SlideIn";
 
 interface Props {
   post: TaggedPost;
@@ -33,42 +34,52 @@ const BlogPostPreview = ({ post, large }: Props): JSX.Element => {
     >
       <Link href={`/blog/${post.slug}`} passHref>
         <a className={styles.inner}>
-          <div className={styles.image}>
-            <div className={styles.information}>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    src={CalendarIcon}
-                    width={16}
-                    height={16}
-                    alt="Calendar Icon"
-                  />
-                </div>
-                {dateString}
+          <SlideIn>
+            <div className={styles.image}>
+              <div className={styles.information}>
+                <SlideIn direction="down">
+                  <div className={styles.tag}>
+                    <div className={styles.icon}>
+                      <Image
+                        src={CalendarIcon}
+                        width={16}
+                        height={16}
+                        alt="Calendar Icon"
+                      />
+                    </div>
+                    {dateString}
+                  </div>
+                </SlideIn>
+                <SlideIn direction="down" delay={300}>
+                  <div className={styles.tag}>
+                    <div className={styles.icon}>
+                      <Image
+                        src={ClockIcon}
+                        width={16}
+                        height={16}
+                        alt="Clock Icon"
+                      />
+                    </div>
+                    {post.readTime} min to read
+                  </div>
+                </SlideIn>
               </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    src={ClockIcon}
-                    width={16}
-                    height={16}
-                    alt="Clock Icon"
-                  />
-                </div>
-                {post.readTime} min to read
-              </div>
+              <Image
+                src={post.previewImage}
+                alt=""
+                objectFit="cover"
+                layout="fill"
+              />
             </div>
-            <Image
-              src={post.previewImage}
-              alt=""
-              objectFit="cover"
-              layout="fill"
-            />
-          </div>
+          </SlideIn>
           <div className={styles.content}>
             <Tags blogTags={post.tags} />
-            <h2>{post.name}</h2>
-            <div className={styles.text}>{previewText}</div>
+            <SlideIn delay={200}>
+              <h2>{post.name}</h2>
+            </SlideIn>
+            <SlideIn delay={400}>
+              <div className={styles.text}>{previewText}</div>
+            </SlideIn>
           </div>
         </a>
       </Link>

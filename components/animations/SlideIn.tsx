@@ -5,7 +5,7 @@ interface Props {
   children: ReactNode;
   delay?: number;
   direction?: "up" | "down" | "right" | "left";
-  style?: "smooth";
+  style?: "smooth" | "overflow";
 }
 
 const SlideUp = ({
@@ -23,7 +23,7 @@ const SlideUp = ({
           setVisible(entries[0].isIntersecting);
         },
         {
-          rootMargin: style === "smooth" ? "100px  100px 0px" : "0px",
+          rootMargin: "200px 0px 200px 0px",
         }
       );
       observer.observe(element.current);
@@ -33,7 +33,7 @@ const SlideUp = ({
     }
   }, [element, style]);
   return (
-    <div className={styles.container}>
+    <div className={styles.container + " " + (style ? styles[style] : "")}>
       <div
         style={delay ? { animationDelay: `${delay}ms` } : undefined}
         ref={element}

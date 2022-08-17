@@ -1,12 +1,11 @@
 .inner {
-  padding-top: 200px;
   width: 100%;
   height: clamp(750px, 90vw, 100vh);
   display: flex;
   flex-direction: column;
   @include breakpoint(xlarge) {
-    padding-bottom: 50px;
-    margin-bottom: -50px;
+    padding-bottom: 20px;
+    margin-bottom: -20px;
     flex-direction: row;
   }
 }

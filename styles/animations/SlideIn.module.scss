@@ -1,6 +1,13 @@
 .container {
   display: block;
   overflow: hidden;
+  &.overflow {
+    overflow: visible;
+    & > * {
+      opacity: 0;
+      animation: 800ms ease-out forwards;
+    }
+  }
 
   & > * {
     opacity: 0;

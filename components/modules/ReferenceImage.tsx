@@ -1,3 +1,4 @@
+import SlideIn from "@components/animations/SlideIn";
 import { Reference } from "@prisma/client";
 import styles from "@styles/modules/Reference.module.scss";
 import Image from "next/image";

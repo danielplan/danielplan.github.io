@@ -2,7 +2,7 @@
   h2 {
     text-transform: none;
     font-size: clamp(18px, 4vw, 28px);
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     line-height: 1.2;
     margin-top: 15px;
   }
@@ -13,13 +13,14 @@
   &.large {
     @include breakpoint(large) {
       .image {
-        padding-bottom: 60%;
+        padding-bottom: 62%;
       }
       h2 {
         font-size: clamp(24px, 5vw, 64px);
       }
 
       .content {
+        margin-top: 35px;
         font-size: clamp(16px, 3vw, 24px);
       }
     }
@@ -33,7 +34,6 @@
   position: relative;
   width: 100%;
   padding-bottom: 52%;
-  margin-bottom: 30px;
   background: #444;
 }
 

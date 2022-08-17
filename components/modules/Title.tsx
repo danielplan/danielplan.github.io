@@ -15,7 +15,7 @@ const Title = ({
 }: Props): JSX.Element => {
   return (
     <section className={styles.module}>
-      <div className="container">
+      <div className="container header-padding">
         <h1>
           {smallHeading && (
             <div className="tiny-text">
