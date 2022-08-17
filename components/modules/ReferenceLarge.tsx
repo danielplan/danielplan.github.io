@@ -1,15 +1,12 @@
 import styles from "@styles/modules/Reference.module.scss";
 import SlideIn from "@components/animations/SlideIn";
-import { Reference, ReferenceTag, Tag } from "@prisma/client";
-import Image from "next/image";
 import Link from "next/link";
 import Tags from "./Tags";
 import ReferenceImage from "./ReferenceImage";
+import { TaggedReference } from "@pages/portfolio";
 
 interface Props {
-  reference: Reference & {
-    tags: (ReferenceTag & { tag: Tag | null })[];
-  };
+  reference: TaggedReference;
 }
 
 const ReferenceLarge = ({ reference }: Props): JSX.Element => {

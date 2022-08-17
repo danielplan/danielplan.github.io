@@ -1,5 +1,7 @@
 .inner {
   display: flex;
+  flex-wrap: wrap;
+  margin: -10px;
 }
 
 .tag {
@@ -11,6 +13,7 @@
   overflow: hidden;
   font-size: clamp(14px, 3vw, 18px);
   text-transform: uppercase;
+  margin: 10px;
   .background {
     opacity: 0.25;
     position: absolute;

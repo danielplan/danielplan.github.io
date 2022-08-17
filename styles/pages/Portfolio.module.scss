@@ -1,7 +1,15 @@
 .reference-list {
-  display: flex;
-  justify-content: space-between;
+  @include breakpoint(medium) {
+    display: flex;
+    justify-content: space-between;
+  }
   .reference-column {
-    width: calc(50% - 50px);
+    width: 100%;
+    @include breakpoint(medium) {
+      width: calc(50% - 5px);
+    }
+    @include breakpoint(large) {
+      width: calc(50% - 50px);
+    }
   }
 }

@@ -1,12 +1,15 @@
 import Head from "next/head";
-import styles from "@styles/pages/Portfolio.module.scss";
+import styles from "@styles/pages/Blog.module.scss";
 import Title from "@components/modules/Title";
-import { Post, PrismaClient } from "@prisma/client";
-import BlogPostLarge from "@components/modules/BlogPostLarge";
-import BlogPostSmall from "@components/modules/BlogPostSmall";
+import { Post, PostTag, PrismaClient, Tag } from "@prisma/client";
+import BlogPostPreview from "@components/modules/BlogPostPreview";
+
+export type TaggedPost = Post & {
+  tags: (PostTag & { tag: Tag | null })[];
+};
 
 interface Props {
-  posts: Post[];
+  posts: TaggedPost[];
 }
 
 const Blog = ({ posts }: Props) => {
@@ -18,12 +21,16 @@ const Blog = ({ posts }: Props) => {
       </Head>
       <main className={styles.main}>
         <Title smallHeading="MY" largeHeadingColor="Blog" />
-        {posts && posts[0] && <BlogPostLarge post={posts[0]} />}
         <div className="margin-large-top container">
-          <div className="three-cols-grid">
+          <div className={styles["blog-grid"]}>
+            {posts && posts[0] && (
+              <div className={styles["blog-item-large"]}>
+                <BlogPostPreview post={posts[0]} large />
+              </div>
+            )}
             {posts.slice(1).map((post) => (
-              <div className="column" key={post.id}>
-                <BlogPostSmall post={post} />
+              <div className={styles["blog-item"]} key={post.id}>
+                <BlogPostPreview post={post} />
               </div>
             ))}
           </div>
@@ -39,6 +46,7 @@ export async function getStaticProps() {
     orderBy: {
       createDate: "desc",
     },
+    include: { tags: { include: { tag: true } } },
   });
   prisma.$disconnect();
 

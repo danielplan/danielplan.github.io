@@ -1,27 +1,36 @@
 .image {
-  height: 600px;
+  height: clamp(300px, 50vw, 800px);
+  background: #4444;
   position: relative;
+  margin: clamp(30px, 5vw, 120px) 0;
 }
-
-
 
 .container {
   max-width: 800px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 $container-padding;
+  @include breakpoint(large) {
+    padding: 0 $container-padding-lg;
+  }
 }
-.blogTitle {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  text-align: center;
-  padding-bottom: 60px;
-  h1 {
-    font-size: 48px;
-    text-transform: uppercase;
+
+.blog-grid {
+  display: grid;
+  gap: 30px;
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(2, auto);
+  }
+  @include breakpoint(large) {
+    gap: 50px;
+    grid-template-columns: repeat(3, auto);
+  }
+
+  .blog-item-large {
+    @include breakpoint(large) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
   }
 }
 
@@ -31,8 +40,43 @@
   margin: 40px 0;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 20px;
+  h1 {
+    margin: clamp(10px, 5vw, 50px) 0;
+  }
+  .information {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .tag {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    background: rgba($black, 0.15);
+    font-weight: $font-weight-bold;
+    padding: 5px 20px 5px 15px;
+    border-radius: 5px;
+    margin: 20px;
+    margin-right: 0;
+    margin-top: 0;
+    .icon {
+      margin-right: 10px;
+    }
+  }
+}
+
 .content {
   font-size: 16px;
+  line-height: 1.6;
 
   h1 {
     text-transform: none;
@@ -55,7 +99,8 @@
     margin-bottom: 10px;
   }
 
-  ul, ol {
+  ul,
+  ol {
     padding-left: 15px;
   }
 

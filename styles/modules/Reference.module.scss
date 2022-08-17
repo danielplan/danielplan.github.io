@@ -2,10 +2,13 @@
   display: block;
   position: relative;
   .image {
-    height: 800px;
-    margin-left: calc(
-      (100vw - #{$container-max-width}) / -2 - #{$container-padding-lg}
-    );
+    height: clamp(400px, 60vw, 50vh);
+    @include breakpoint(xlarge) {
+      height: 800px;
+      margin-left: calc(
+        (100vw - #{$container-max-width}) / -2 - #{$container-padding-lg}
+      );
+    }
   }
 }
 
@@ -21,15 +24,19 @@
   }
 
   .image {
-    height: 400px;
+    height: 500px;
+    background-color: #eee;
     &.large {
-      height: 800px;
+      height: 900px;
     }
   }
 }
 
 .module {
-  margin: 100px 0;
+  margin: 50px 0;
+  @include breakpoint(medium) {
+    margin: 100px 0;
+  }
 }
 
 .content {

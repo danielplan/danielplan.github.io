@@ -5,10 +5,11 @@ import ReferenceLarge from "@components/modules/ReferenceLarge";
 import ReferenceSmall from "@components/modules/ReferenceSmall";
 import { PrismaClient, Reference, ReferenceTag, Tag } from "@prisma/client";
 
+export type TaggedReference = Reference & {
+  tags: (ReferenceTag & { tag: Tag | null })[];
+};
 interface Props {
-  references: (Reference & {
-    tags: (ReferenceTag & { tag: Tag | null })[];
-  })[];
+  references: TaggedReference[];
 }
 
 const Portfolio = ({ references }: Props) => {

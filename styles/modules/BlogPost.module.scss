@@ -1,50 +1,69 @@
 .module {
   h2 {
     text-transform: none;
+    font-size: clamp(18px, 4vw, 28px);
+    margin-bottom: 10px;
+    line-height: 1.2;
+    margin-top: 15px;
   }
-
-  &.small {
-    text-align: center;
-    margin-bottom: 30px;
-
-    .image {
-      margin-bottom: 15px;
-    }
-
-    .content {
-      font-size: 14px;
-
-      h2 {
-        font-size: 24px;
-        margin-bottom: 5px;
-      }
-    }
+  .inner {
+    display: block;
   }
 
   &.large {
-    .image {
-      margin-bottom: 30px;
-    }
-
-    .content {
-      display: flex;
-      margin: -25px;
-      font-size: 22px;
-
-      .text {
-        line-height: 1.8;
+    @include breakpoint(large) {
+      .image {
+        padding-bottom: 60%;
+      }
+      h2 {
+        font-size: clamp(24px, 5vw, 64px);
       }
 
-      & > * {
-        width: 50%;
-        padding: 25px;
+      .content {
+        font-size: clamp(16px, 3vw, 24px);
       }
     }
   }
 }
 
+.text {
+  line-height: 1.6;
+}
 .image {
   position: relative;
-  padding-bottom: 56.5%;
   width: 100%;
+  padding-bottom: 52%;
+  margin-bottom: 30px;
+  background: #444;
+}
+
+.information {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.content {
+  margin-top: 20px;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  background: rgba($white, 0.75);
+  font-weight: $font-weight-bold;
+  padding: 5px 20px 5px 15px;
+  border-radius: 5px;
+  margin: 20px;
+  margin-right: 0;
+  margin-bottom: 0;
+  .icon {
+    margin-right: 10px;
+  }
 }

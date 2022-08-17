@@ -2,7 +2,6 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import styles from "@styles/pages/Home.module.scss";
 import Introduction from "@components/modules/Introduction";
-import Text from "@components/modules/Text";
 import Skills from "@components/modules/Skills";
 import ScrollingText from "@components/modules/ScrollingText";
 import Button from "@components/atoms/Button";

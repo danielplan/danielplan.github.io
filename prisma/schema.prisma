@@ -28,6 +28,7 @@ model Tag {
   name       String
   color      String
   references ReferenceTag[]
+  posts      PostTag[]
 }
 
 model ReferenceTag {
@@ -40,11 +41,22 @@ model ReferenceTag {
 }
 
 model Post {
-  id           String @id @default(uuid())
+  id           String    @id @default(uuid())
   name         String
   previewImage String
-  slug         String @unique
-  body         String
+  slug         String    @unique
   lead         String
-  createDate   String @default("2022-08-31")
+  body         String
+  readTime     Int
+  createDate   String    @default("2022-12-30")
+  tags         PostTag[]
+}
+
+model PostTag {
+  post   Post   @relation(fields: [postId], references: [id])
+  postId String
+  tag    Tag    @relation(fields: [tagId], references: [id])
+  tagId  String
+
+  @@id([tagId, postId])
 }
