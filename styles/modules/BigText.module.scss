@@ -1,11 +1,14 @@
 .text {
-  font-size: clamp(20px, 7vw, 96px);
+  font-size: clamp(32px, 7vw, 96px);
   font-weight: $font-weight-bold;
   padding: 20px 0;
-  padding-left: 40%;
   line-height: 1;
+  padding-left: 20%;
+  @include breakpoint(medium) {
+    padding-left: 40%;
+  }
 }
 
 .module {
-  margin: clamp(50px, 15vw, 300px) 0;
+  margin: clamp(100px, 15vw, 300px) 0;
 }

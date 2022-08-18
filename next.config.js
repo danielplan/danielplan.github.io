@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   reactStrictMode: true,
   sassOptions: {
@@ -8,6 +9,11 @@ const nextConfig = {
     @import "~@styles/abstract/_variables.scss";
     @import "~@styles/abstract/_mixins.scss";
     `,
+  },
+  experimental: {
+    images: {
+      unoptimized: true
+    }
   }
 }
 

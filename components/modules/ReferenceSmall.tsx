@@ -12,23 +12,21 @@ interface Props {
 const ReferenceSmall = ({ reference }: Props): JSX.Element => {
   return (
     <section className={styles.module}>
-      <div className="container">
-        <Link href={`/portfolio/${reference.slug}`}>
-          <a className={`${styles["small-inner"]} clickable`}>
-            <SlideIn>
-              <div className={styles.tags}>
-                <Tags referenceTags={reference.tags} />
-              </div>
-            </SlideIn>
-            <ReferenceImage reference={reference} />
-            <div className={styles.content}>
-              <SlideIn>
-                <h2>{reference.name}</h2>
-              </SlideIn>
+      <Link href={`/portfolio/${reference.slug}`}>
+        <a className={`${styles["small-inner"]} clickable`}>
+          <SlideIn>
+            <div className={styles.tags}>
+              <Tags referenceTags={reference.tags} />
             </div>
-          </a>
-        </Link>
-      </div>
+          </SlideIn>
+          <ReferenceImage reference={reference} />
+          <div className={styles.content}>
+            <SlideIn>
+              <h2>{reference.name}</h2>
+            </SlideIn>
+          </div>
+        </a>
+      </Link>
     </section>
   );
 };

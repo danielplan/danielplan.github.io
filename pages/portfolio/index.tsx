@@ -26,34 +26,16 @@ const Portfolio = ({ references }: Props) => {
         )}
         <div className="container">
           <div className={styles["reference-list"]}>
-            <div className={styles["reference-column"]}>
-              {references &&
-                references
-                  .slice(1)
-                  .map(
-                    (reference, i) =>
-                      i % 2 === 0 && (
-                        <ReferenceSmall
-                          key={reference.id}
-                          reference={reference}
-                        />
-                      )
-                  )}
-            </div>
-            <div className={styles["reference-column"]}>
-              {references &&
-                references
-                  .slice(1)
-                  .map(
-                    (reference, i) =>
-                      i % 2 !== 0 && (
-                        <ReferenceSmall
-                          key={reference.id}
-                          reference={reference}
-                        />
-                      )
-                  )}
-            </div>
+            {references.slice(1).map((reference) => (
+              <div
+                className={
+                  styles["reference-item"] + " " + styles[reference.imageSize]
+                }
+                key={reference.id}
+              >
+                <ReferenceSmall reference={reference} />
+              </div>
+            ))}
           </div>
         </div>
       </main>

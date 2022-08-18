@@ -17,12 +17,11 @@
 
 .blog-grid {
   display: grid;
-  gap: 30px;
+  gap: 50px;
   @include breakpoint(medium) {
     grid-template-columns: repeat(2, auto);
   }
   @include breakpoint(large) {
-    gap: 50px;
     grid-template-columns: repeat(3, auto);
   }
 
@@ -36,7 +35,7 @@
 
 .lead {
   font-weight: bold;
-  font-size: 20px;
+  font-size: clamp(18px, 4vw, 20px);
   margin: 40px 0;
 }
 
@@ -60,14 +59,20 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    font-size: 14px;
     background: rgba($black, 0.15);
     font-weight: $font-weight-bold;
     padding: 5px 20px 5px 15px;
     border-radius: 5px;
-    margin: 20px;
+    margin: 10px;
     margin-right: 0;
     margin-top: 0;
+    font-size: 12px;
+    @include breakpoint(medium) {
+      font-size: 14px;
+      margin: 20px;
+      margin-right: 0;
+      margin-top: 0;
+    }
     .icon {
       margin-right: 10px;
     }
@@ -75,7 +80,6 @@
 }
 
 .content {
-  font-size: 16px;
   line-height: 1.6;
 
   h1 {

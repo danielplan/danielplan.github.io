@@ -9,11 +9,14 @@
   bottom: 30px;
   right: 0;
   line-height: 1;
-  left: 50px;
   z-index: 0;
   font-size: clamp(32px, 5vw, 64px);
   font-weight: $font-weight-bold;
   color: $black;
+  left: $container-padding;
+  @include breakpoint(medium) {
+    left: 50px;
+  }
 
   .tiny {
     font-weight: normal;

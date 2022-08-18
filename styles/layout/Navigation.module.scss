@@ -35,8 +35,11 @@
 }
 
 .nav {
-  display: flex;
-  margin: 0 -45px;
+  display: none;
+  @include breakpoint(medium) {
+    display: flex;
+    margin: 0 -45px;
+  }
 
   a {
     text-transform: uppercase;

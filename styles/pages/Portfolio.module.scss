@@ -1,15 +1,15 @@
 .reference-list {
-  @include breakpoint(medium) {
-    display: flex;
-    justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 40px;
+  @include breakpoint(large) {
+    gap: 100px;
   }
-  .reference-column {
-    width: 100%;
-    @include breakpoint(medium) {
-      width: calc(50% - 5px);
-    }
-    @include breakpoint(large) {
-      width: calc(50% - 50px);
+  .reference-item {
+    &.large {
+      @include breakpoint(large) {
+        grid-row: span 2;
+      }
     }
   }
 }

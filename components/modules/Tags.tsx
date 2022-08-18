@@ -1,6 +1,6 @@
 import { PostTag, ReferenceTag, Tag } from "@prisma/client";
 import styles from "@styles/modules/Tags.module.scss";
-import TagComponent from "./Tag";
+import TagComponent from "../atoms/Tag";
 
 interface Props {
   referenceTags?: (ReferenceTag & { tag: Tag | null })[];

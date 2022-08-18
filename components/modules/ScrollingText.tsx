@@ -19,8 +19,8 @@ const ScrollingText = ({
   useEffect(() => {
     const handler = () => {
       if (text.current && container.current) {
-        const top = container.current.offsetTop - window.innerHeight * 0.75;
-        const bottom = container.current.offsetTop - window.innerHeight * 0.5;
+        const top = container.current.offsetTop - window.innerHeight * 0.8;
+        const bottom = container.current.offsetTop - window.innerHeight * 0.4;
         if (
           document.documentElement.scrollTop >= top &&
           document.documentElement.scrollTop <= bottom

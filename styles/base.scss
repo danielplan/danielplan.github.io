@@ -6,7 +6,7 @@ body {
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   background: $white;
   color: $black;
-  font-size: 18px;
+  font-size: clamp(16px, 3vw, 18px);
 }
 
 a {
@@ -67,13 +67,13 @@ h1 {
 }
 
 h2 {
-  font-size: clamp(36px, 6vw, 96px);
+  font-size: clamp(48px, 6vw, 96px);
   line-height: 1;
   font-weight: $font-weight-bold;
 
   .tiny-text {
     line-height: 1.2;
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-weight: $font-weight-semi;
   }
 }

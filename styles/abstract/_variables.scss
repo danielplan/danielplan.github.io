@@ -10,14 +10,15 @@ $white: #fbf9ff;
 $background: linear-gradient(90deg, #0a090f 0%, #0d0723 100%);
 
 $container-max-width: 1600px;
-$container-padding: 1rem;
-$container-padding-lg: 1.5rem;
+$container-padding: 1.5rem;
+$container-padding-lg: 2rem;
 
 $breakpoints: (
   "small": 360px,
   "medium": 820px,
   "large": 1280px,
   "xlarge": 1420px,
+  "xxlarge": 1800px,
 );
 
 $font-weight-semi: 600;

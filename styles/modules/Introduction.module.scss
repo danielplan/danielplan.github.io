@@ -1,6 +1,6 @@
 .module {
   .inner {
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       display: flex;
       align-items: center;
       height: 100vh;
@@ -11,13 +11,16 @@
       height: 400px;
       overflow: visible;
       width: 100%;
-      @include breakpoint(large) {
+      @include breakpoint(medium) {
         height: 100%;
-        width: calc(50% + 100px);
+        width: 50%;
         padding: 30px;
-        padding-right: 150px;
       }
-      @include breakpoint(xlarge) {
+      @include breakpoint(large) {
+        width: calc(50% + 40px);
+        padding-right: 100px;
+      }
+      @include breakpoint(xxlarge) {
         width: calc(45% + 150px);
         padding: 40px;
         padding-right: 200px;
@@ -30,16 +33,21 @@
     }
 
     .text {
+      padding: 0 $container-padding;
+      padding-top: 20px;
       max-width: 700px;
       flex-grow: 1;
-      @include breakpoint(large) {
-        padding-top: 100px;
+      @include breakpoint(medium) {
+        padding-top: 0;
         padding-left: 20px;
       }
     }
     p {
-      margin-top: 30px;
+      margin-top: 10px;
       font-size: clamp(16px, 2vw, 36px);
+      @include breakpoint(large) {
+        margin-top: 30px;
+      }
     }
   }
 }
