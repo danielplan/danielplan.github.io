@@ -3,7 +3,7 @@ import SlideIn from "@components/animations/SlideIn";
 import Link from "next/link";
 import Tags from "./Tags";
 import ReferenceImage from "./ReferenceImage";
-import { TaggedReference } from "@pages/portfolio";
+import { TaggedReference } from "@pages/projects";
 
 interface Props {
   reference: TaggedReference;
@@ -12,7 +12,7 @@ interface Props {
 const ReferenceSmall = ({ reference }: Props): JSX.Element => {
   return (
     <section className={styles.module}>
-      <Link href={`/portfolio/${reference.slug}`}>
+      <Link href={`/projects/${reference.slug}`}>
         <a className={`${styles["small-inner"]} clickable`}>
           <SlideIn>
             <div className={styles.tags}>

@@ -16,9 +16,9 @@ export const navigationItems: NavItem[] = [
     href: "/",
   },
   {
-    label: "Portfolio",
+    label: "Projects",
     icon: "portfolio",
-    href: "/portfolio",
+    href: "/projects",
   },
   {
     label: "Blog",

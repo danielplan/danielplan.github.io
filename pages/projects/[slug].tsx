@@ -11,7 +11,7 @@ interface Props {
   reference: Reference;
 }
 
-const Reference = ({ reference }: Props) => {
+const ProjectDetail = ({ reference }: Props) => {
   return (
     <>
       <Head>
@@ -82,4 +82,4 @@ export async function getStaticPaths() {
   };
 }
 
-export default Reference;
+export default ProjectDetail;

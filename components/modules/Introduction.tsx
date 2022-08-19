@@ -14,19 +14,19 @@ const Introduction = (): JSX.Element => {
                 label: "wastend",
                 image: "/img/references/wastend/mobile.png",
                 color: "#dcffff",
-                link: "/portfolio/wastend",
+                link: "/projects/wastend",
               },
               {
                 label: "ryoko",
                 image: "/img/references/ryoko/mobile.png",
                 color: "#EAE3FF",
-                link: "/portfolio/ryoko",
+                link: "/projects/ryoko",
               },
               {
                 label: "Hikari",
                 image: "/img/references/hikari/mobile.png",
                 color: "#E8DDFF",
-                link: "/portfolio/hikari",
+                link: "/projects/hikari",
               },
             ]}
           />
