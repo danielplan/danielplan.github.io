@@ -1,11 +1,11 @@
 .inner {
   position: relative;
-  height: clamp(48px, 10vw, 200px);
+  height: clamp(100px, 10vw, 200px);
   overflow: hidden;
 }
 
 .text {
-  font-size: clamp(36px, 9vw, 128px);
+  font-size: clamp(52px, 9vw, 128px);
   position: absolute;
   bottom: 0;
   text-transform: uppercase;
@@ -18,5 +18,5 @@
 .description {
   margin-bottom: 50px;
   text-align: center;
-  font-size: clamp(16px, 3vw, 36px);
+  font-size: clamp(18px, 3vw, 36px);
 }

@@ -1,8 +1,11 @@
 .reference-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 40px;
   margin-top: 40px;
+  @include breakpoint(medium) {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  }
+
   @include breakpoint(large) {
     margin-top: 100px;
     gap: 100px;

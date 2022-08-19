@@ -21,8 +21,8 @@ const ContactCard = ({ background, icon, label, value, url }: Props) => {
             <Image
               src={`/img/icons/${icon}`}
               alt={label}
-              width="120"
-              height="120"
+              width="200"
+              height="60"
               objectFit="contain"
             />
             <div className={styles.text}>{label}</div>
@@ -34,8 +34,8 @@ const ContactCard = ({ background, icon, label, value, url }: Props) => {
             <Image
               src={`/img/icons/${icon}`}
               alt={label}
-              width="120"
-              height="120"
+              width="200"
+              height="60"
               objectFit="contain"
             />
             <div className={styles.text}>{value}</div>

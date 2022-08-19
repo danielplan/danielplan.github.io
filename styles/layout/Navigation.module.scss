@@ -4,7 +4,8 @@
   left: 0;
   right: 0;
   padding: 20px;
-  @include breakpoint(large) {
+  z-index: 3;
+  @include breakpoint(medium) {
     padding: 60px;
   }
 }
@@ -13,6 +14,9 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  @include breakpoint(medium) {
+    height: 60px;
+  }
   @include breakpoint(large) {
     height: 100px;
   }
@@ -26,6 +30,12 @@
   height: 60px;
   left: 20px;
   top: 20px;
+  @include breakpoint(medium) {
+    width: 80px;
+    height: 80px;
+    left: 40px;
+    top: 40px;
+  }
   @include breakpoint(large) {
     width: 100px;
     height: 100px;
@@ -38,13 +48,21 @@
   display: none;
   @include breakpoint(medium) {
     display: flex;
+    margin: 0 -20px;
+  }
+  @include breakpoint(large) {
     margin: 0 -45px;
   }
 
   a {
     text-transform: uppercase;
     display: block;
-    padding: 0 45px;
+    @include breakpoint(medium) {
+      padding: 0 20px;
+    }
+    @include breakpoint(large) {
+      padding: 0 45px;
+    }
 
     &.active {
       font-weight: $font-weight-bold;

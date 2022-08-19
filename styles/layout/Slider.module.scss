@@ -63,7 +63,7 @@
     left: 100%;
     right: 10px;
     transform: translateX(-100%);
-    @include breakpoint(large) {
+    @include breakpoint(medium) {
       right: 0;
       transform: translateX(-50%);
     }
