@@ -10,8 +10,8 @@ interface Props {
 const ReferenceDetail = ({ reference }: Props): JSX.Element => {
   return (
     <section className={styles.module}>
-      <div className="container header">
-        <div className={styles.inner + " header-padding"}>
+      <header className="container header">
+        <div className={styles.inner}>
           <div className={styles.image}>
             <ReferenceImage reference={reference} />
           </div>
@@ -23,7 +23,7 @@ const ReferenceDetail = ({ reference }: Props): JSX.Element => {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </section>
   );
 };

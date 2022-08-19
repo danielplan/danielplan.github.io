@@ -29,6 +29,7 @@ const menu: NavItem[] = [
 
 const Navigation = (): JSX.Element => {
   const router = useRouter();
+  let hasActiveLink = false;
 
   return (
     <header className={styles.header}>
@@ -43,7 +44,8 @@ const Navigation = (): JSX.Element => {
             <Link key={i} href={item.href} passHref>
               <a
                 className={
-                  (router.asPath.match(new RegExp(`^${item.href}(/.+)*$`))
+                  ((router.pathname === "/" && item.href === "/") ||
+                  (item.href !== "/" && router.pathname.startsWith(item.href))
                     ? styles.active
                     : undefined) + " clickable"
                 }

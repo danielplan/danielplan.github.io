@@ -3,14 +3,12 @@
 }
 .grid {
   display: grid;
-  grid-auto-flow: dense;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  @include breakpoint(medium) {
-    grid-template-columns: repeat(2, 1fr);
-  }
 
   @include breakpoint(large) {
-    gap: 0;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     margin: -20px;
     grid-template-areas:
       "a a b"
@@ -34,31 +32,37 @@
 
 .item {
   position: relative;
+  background: #444;
+  display: block;
+  width: 100%;
+}
+.inner-item {
+  width: 100%;
+  position: relative;
+  padding-bottom: 100%;
+  @include breakpoint(large) {
+    padding-bottom: 0;
+    height: 500px;
+  }
+}
+.item-content {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  background: #eee;
-  padding: 25px;
-  height: calc(100vw - 30px);
-  @include breakpoint(medium) {
-    height: calc(50vw - 30px);
-  }
-  @include breakpoint(large) {
-    margin: 20px;
-    padding: 50px;
-    height: 400px;
-  }
-  @include breakpoint(xlarge) {
-    height: 500px;
-  }
+  position: absolute;
+  inset: 0;
+  padding: clamp(20px, 3vw, 50px);
 }
 
 .item-1 {
   background-color: $primary-color;
   color: $white;
-  font-size: clamp(24px, 8vw, 64px);
   text-transform: uppercase;
   font-weight: $font-weight-bold;
+  font-size: 48px;
+  @include breakpoint(medium) {
+    font-size: clamp(24px, 5vw, 64px);
+  }
   svg {
     margin-top: 30px;
     fill: $white;
