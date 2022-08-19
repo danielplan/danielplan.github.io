@@ -4,6 +4,7 @@ import Head from "next/head";
 import { NextPage } from "next";
 import BigText from "@components/modules/BigText";
 import GradientText from "@components/atoms/GradientText";
+import Contact from "@components/modules/Contact";
 
 const Home: NextPage = () => {
   return (
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
           <BigText>
             Here are some ways to <GradientText text="contact" /> me.
           </BigText>
+          <Contact />
         </div>
       </main>
     </>

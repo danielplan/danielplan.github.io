@@ -1,0 +1,20 @@
+.module {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: -10px 0;
+  @include breakpoint(medium) {
+    margin: -30px;
+  }
+  .item {
+    width: 100%;
+    padding: 10px 0;
+    @include breakpoint(medium) {
+      padding: 20px 30px;
+      flex: 0 0 50%;
+      &:nth-child(2n) {
+        padding-top: 60px;
+      }
+    }
+  }
+}
