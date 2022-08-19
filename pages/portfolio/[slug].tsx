@@ -5,6 +5,7 @@ import ReferenceDetail from "@components/modules/ReferenceDetail";
 import BigText from "@components/modules/BigText";
 import GradientText from "@components/atoms/GradientText";
 import ReferenceGrid from "@components/modules/ReferenceGrid";
+import MobileNavigation from "@components/layout/MobileNavigation";
 
 interface Props {
   reference: Reference;
@@ -32,6 +33,12 @@ const Reference = ({ reference }: Props) => {
         </BigText>
         <ReferenceGrid reference={reference} />
       </main>
+      <MobileNavigation
+        back={{
+          href: "/portfolio",
+          label: "Back to portfolio",
+        }}
+      />
     </>
   );
 };

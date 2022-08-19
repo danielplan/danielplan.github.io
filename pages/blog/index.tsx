@@ -3,6 +3,7 @@ import styles from "@styles/pages/Blog.module.scss";
 import Title from "@components/modules/Title";
 import { Post, PostTag, PrismaClient, Tag } from "@prisma/client";
 import BlogPostPreview from "@components/modules/BlogPostPreview";
+import MobileNavigation from "@components/layout/MobileNavigation";
 
 export type TaggedPost = Post & {
   tags: (PostTag & { tag: Tag | null })[];
@@ -36,6 +37,7 @@ const Blog = ({ posts }: Props) => {
           </div>
         </div>
       </main>
+      <MobileNavigation />
     </>
   );
 };

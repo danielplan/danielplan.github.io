@@ -7,6 +7,7 @@ import CalendarIcon from "/public/img/icons/calendar.svg";
 import ClockIcon from "/public/img/icons/clock.svg";
 import Tags from "@components/modules/Tags";
 import { BASE_URL } from "@pages/_app";
+import MobileNavigation from "@components/layout/MobileNavigation";
 
 interface Props {
   post: TaggedPost;
@@ -104,6 +105,12 @@ const Post = ({ post }: Props) => {
           </div>
         </main>
       </article>
+      <MobileNavigation
+        back={{
+          href: "/portfolio",
+          label: "Back to blog",
+        }}
+      />
     </>
   );
 };

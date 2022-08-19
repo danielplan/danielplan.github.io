@@ -24,9 +24,7 @@
     background-color: #eee;
     padding-bottom: 56.5%;
     &.large {
-      @include breakpoint(large) {
-        padding-bottom: 130%;
-      }
+      padding-bottom: 130%;
     }
   }
 }

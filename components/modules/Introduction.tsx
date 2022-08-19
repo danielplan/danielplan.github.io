@@ -13,7 +13,7 @@ const Introduction = (): JSX.Element => {
               {
                 label: "wastend",
                 image: "/img/references/wastend/mobile.png",
-                color: "#E9FFFF",
+                color: "#dcffff",
                 link: "/portfolio/wastend",
               },
               {

@@ -4,6 +4,7 @@ import Title from "@components/modules/Title";
 import ReferenceLarge from "@components/modules/ReferenceLarge";
 import ReferenceSmall from "@components/modules/ReferenceSmall";
 import { PrismaClient, Reference, ReferenceTag, Tag } from "@prisma/client";
+import MobileNavigation from "@components/layout/MobileNavigation";
 
 export type TaggedReference = Reference & {
   tags: (ReferenceTag & { tag: Tag | null })[];
@@ -39,6 +40,7 @@ const Portfolio = ({ references }: Props) => {
           </div>
         </div>
       </main>
+      <MobileNavigation />
     </>
   );
 };

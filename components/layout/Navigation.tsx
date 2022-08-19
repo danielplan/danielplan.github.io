@@ -3,33 +3,37 @@ import styles from "@styles/layout/Navigation.module.scss";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-interface NavItem {
+export interface NavItem {
   label: string;
   href: string;
+  icon?: string;
 }
 
-const menu: NavItem[] = [
+export const navigationItems: NavItem[] = [
   {
     label: "Home",
+    icon: "home",
     href: "/",
   },
   {
     label: "Portfolio",
+    icon: "portfolio",
     href: "/portfolio",
   },
   {
     label: "Blog",
+    icon: "blog",
     href: "/blog",
   },
   {
     label: "Contact",
+    icon: "contact",
     href: "/contact",
   },
 ];
 
 const Navigation = (): JSX.Element => {
   const router = useRouter();
-  let hasActiveLink = false;
 
   return (
     <header className={styles.header}>
@@ -40,14 +44,14 @@ const Navigation = (): JSX.Element => {
           </a>
         </Link>
         <nav className={styles.nav}>
-          {menu.map((item, i) => (
+          {navigationItems.map((item, i) => (
             <Link key={i} href={item.href} passHref>
               <a
                 className={
                   ((router.pathname === "/" && item.href === "/") ||
                   (item.href !== "/" && router.pathname.startsWith(item.href))
                     ? styles.active
-                    : undefined) + " clickable"
+                    : "") + " clickable"
                 }
               >
                 {item.label}

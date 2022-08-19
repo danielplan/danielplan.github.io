@@ -52,22 +52,22 @@ h6 {
 }
 
 .header-padding {
-  padding-top: clamp(100px, 20vw, 300px);
+  padding-top: clamp(120px, 20vw, 300px);
 }
 
 h1 {
-  font-size: clamp(58px, 5vw, 110px);
+  font-size: clamp(58px, 8vw, 110px);
   line-height: 1;
 
   .tiny-text {
     line-height: 1.2;
-    font-size: clamp(20px, 4vw, 36px);
+    font-size: clamp(18px, 1.25vw, 36px);
     text-transform: uppercase;
   }
 }
 
 h2 {
-  font-size: clamp(42px, 6vw, 96px);
+  font-size: clamp(42px, 7vw, 96px);
   line-height: 1;
   font-weight: $font-weight-bold;
 
@@ -77,20 +77,14 @@ h2 {
     font-weight: $font-weight-semi;
   }
 }
-.three-cols-grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: -25px;
-  .column {
-    width: (100%/3);
-    padding: 25px;
-  }
-}
-
-.margin-large-top {
-  margin-top: 100px;
-}
 
 p {
   line-height: 1.6;
+}
+
+footer {
+  padding-bottom: 80px;
+  @include breakpoint(medium) {
+    padding-bottom: 0;
+  }
 }

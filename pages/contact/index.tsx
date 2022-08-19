@@ -5,6 +5,7 @@ import { NextPage } from "next";
 import BigText from "@components/modules/BigText";
 import GradientText from "@components/atoms/GradientText";
 import Contact from "@components/modules/Contact";
+import MobileNavigation from "@components/layout/MobileNavigation";
 
 const Home: NextPage = () => {
   return (
@@ -22,6 +23,7 @@ const Home: NextPage = () => {
           <Contact />
         </div>
       </main>
+      <MobileNavigation />
     </>
   );
 };

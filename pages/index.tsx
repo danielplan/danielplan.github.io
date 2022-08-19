@@ -7,7 +7,7 @@ import ScrollingText from "@components/modules/ScrollingText";
 import Button from "@components/atoms/Button";
 import BigText from "@components/modules/BigText";
 import GradientText from "@components/atoms/GradientText";
-
+import MobileNavigation from "@components/layout/MobileNavigation";
 const Home: NextPage = () => {
   return (
     <>
@@ -32,6 +32,7 @@ const Home: NextPage = () => {
           </Button>
         </div>
       </main>
+      <MobileNavigation />
     </>
   );
 };
