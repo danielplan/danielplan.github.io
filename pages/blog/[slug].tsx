@@ -4,12 +4,12 @@ import Image from 'next/image';
 import CalendarIcon from '/public/img/icons/calendar.svg';
 import ClockIcon from '/public/img/icons/clock.svg';
 import Tags from '@components/modules/Tags';
-import {BASE_URL} from '@pages/_app';
 import MobileNavigation from '@components/layout/MobileNavigation';
 import blogPosts, {BlogPost, getBlogPost} from '@content/collections/blog';
 import MetaInfo from '@components/atoms/MetaInfo';
 import {readFileSync} from 'fs';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 interface Props {
   post: BlogPost;
@@ -26,28 +26,30 @@ const Post = ({post}: Props) => {
     <>
       <Head>
         <MetaInfo {...post.meta} />
-        <title>{post.meta.title}</title>
+        <title>
+          {post.meta.title} {general.titleSuffix}
+        </title>
         <script type="application/ld+json">
-          {`{
-              "@context": "https://schema.org",
-              "@type": "Article",
-              "name": "${post.title}",
-              "author": {
-                "@type": "Person",
-                "name": "Daniel Plan"
-              },
-              "datePublished": "${dateString}",
-              "dateModified": "${dateString}",
-              "image": {
-                "@type": "ImageObject",
-                "url": "${BASE_URL}/img/posts${post.previewImage}"
-              },
-              "mainEntityOfPage": {
-                "@type": "WebPage",
-                "@id": "${BASE_URL}/blog/${post.slug}"
-              },
-              "description": "${post.lead}"
-            }`}
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            name: post.title,
+            author: {
+              '@type': 'Person',
+              name: 'Daniel Plan',
+            },
+            datePublished: dateString,
+            dateModified: dateString,
+            image: {
+              '@type': 'ImageObject',
+              url: `${general.baseUrl}/img/posts${post.previewImage}`,
+            },
+            mainEntityOfPage: {
+              '@type': 'WebPage',
+              '@id': `${general.baseUrl}/blog/${post.slug}`,
+            },
+            description: post.lead,
+          })}
         </script>
         <BreadCrumbs
           breadcrumbs={[

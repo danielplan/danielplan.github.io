@@ -11,6 +11,7 @@ import content from '@content/pages/home';
 import HighlightedText from '@components/atoms/HighlightedText';
 import MetaInfo from '@components/atoms/MetaInfo';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 const Home: NextPage = () => {
   return (
@@ -25,7 +26,9 @@ const Home: NextPage = () => {
             },
           ]}
         />
-        <title>{content.meta.title}</title>
+        <title>
+          {content.meta.title} {general.titleSuffix}
+        </title>
       </Head>
       <main className={styles.main}>
         <Introduction

@@ -1,6 +1,6 @@
 const content = {
   meta: {
-    title: 'projects - daniel plan',
+    title: 'projects',
     description:
       "Hey I'm daniel plan. Here are some of my projects. If you want to know more about me, explore my page.",
     keywords:

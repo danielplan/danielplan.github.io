@@ -11,6 +11,7 @@ import references, {
 import HighlightedText from '@components/atoms/HighlightedText';
 import MetaInfo from '@components/atoms/MetaInfo';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 interface Props {
   reference: Reference;
@@ -21,7 +22,9 @@ const ProjectDetail = ({reference}: Props) => {
     <>
       <Head>
         <MetaInfo {...reference.meta} />
-        <title>{reference.meta.title}</title>
+        <title>
+          {reference.meta.title} {general.titleSuffix}
+        </title>
         <BreadCrumbs
           breadcrumbs={[
             {

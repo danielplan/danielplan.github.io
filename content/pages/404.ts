@@ -1,6 +1,6 @@
 const content = {
   meta: {
-    title: '404 - daniel plan',
+    title: '404',
     description: '404 - page not found - daniel plan',
     keywords: '',
     image: '/img/meta/general.png',

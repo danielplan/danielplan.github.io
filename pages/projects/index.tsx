@@ -8,6 +8,7 @@ import references, {Reference} from '@content/collections/references';
 import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/projects';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 interface Props {
   references: Reference[];
@@ -18,7 +19,9 @@ const Projects = ({references}: Props) => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
-        <title>{content.meta.title}</title>
+        <title>
+          {content.meta.title} {general.titleSuffix}
+        </title>
         <BreadCrumbs
           breadcrumbs={[
             {

@@ -29,7 +29,7 @@ const blogPosts = [
     slug: 'how-to-use-the-wastend-app',
     tags: getAllTags(['app']),
     meta: {
-      title: 'How to use the Wastend app - daniel plan',
+      title: 'How to use the Wastend app',
       description: 'A simple guide to use the Wastend app.',
       image: '/img/references/wastend/landscape.png',
       keywords:

@@ -32,7 +32,7 @@ const references: Reference[] = [
     description: 'A modern way to organize your _groceries_.',
     previewImageAlt: 'Screenshots of wastend',
     meta: {
-      title: 'wastend - daniel plan',
+      title: 'wastend',
       description: 'A modern way to organize your groceries.',
       image: '/img/references/wastend/landscape.png',
       keywords:

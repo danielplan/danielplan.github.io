@@ -2,7 +2,7 @@ import {getReference} from '@content/collections/references';
 
 const content = {
   meta: {
-    title: 'home - daniel plan',
+    title: 'home',
     description:
       "Hey I'm daniel plan. I'm a computer science student focused on web development from South Tyrol, Italy. If you want to know more about me, explore my page.",
     keywords:

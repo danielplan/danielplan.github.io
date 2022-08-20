@@ -7,6 +7,7 @@ import blogPosts, {BlogPost} from '@content/collections/blog';
 import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/blog';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 interface Props {
   posts: BlogPost[];
@@ -17,7 +18,9 @@ const Blog = ({posts}: Props) => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
-        <title>{content.meta.title}</title>
+        <title>
+          {content.meta.title} {general.titleSuffix}
+        </title>
         <BreadCrumbs
           breadcrumbs={[
             {

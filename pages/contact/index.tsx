@@ -9,13 +9,16 @@ import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/contact';
 import HighlightedText from '@components/atoms/HighlightedText';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
+import general from '@content/general';
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <MetaInfo {...content.meta} />
-        <title>{content.meta.title}</title>
+        <title>
+          {content.meta.title} {general.titleSuffix}
+        </title>
         <BreadCrumbs
           breadcrumbs={[
             {
