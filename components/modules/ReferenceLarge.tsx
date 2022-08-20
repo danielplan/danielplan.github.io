@@ -20,7 +20,7 @@ const ReferenceLarge = ({reference}: Props): JSX.Element => {
                 <Tags tags={reference.tags} />
               </div>
             </SlideIn>
-            <ReferenceImage reference={reference} />
+            <ReferenceImage reference={reference} landscape />
             <div className={styles.content}>
               <SlideIn>
                 <h2>{reference.name}</h2>

@@ -11,14 +11,14 @@
     gap: 30px;
     margin: -20px;
     grid-template-areas:
-      "a a b"
-      "c d d"
-      "e d d"
-      "f f f"
-      "g g h"
-      "i j j"
-      "k k l"
-      "k k l";
+      'a a b'
+      'c d d'
+      'e d d'
+      'f f f'
+      'g g h'
+      'i j j'
+      'k k l'
+      'k k l';
   }
 }
 
@@ -32,7 +32,6 @@
 
 .item {
   position: relative;
-  background: #444;
   display: block;
   width: 100%;
 }
@@ -54,7 +53,7 @@
   padding: clamp(30px, 3vw, 50px);
 }
 
-.item-1 {
+.item-link {
   background-color: $primary-color;
   color: $white;
   text-transform: uppercase;

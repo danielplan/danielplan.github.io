@@ -41,13 +41,6 @@ const content = {
       background: '#1da1f2',
     },
     {
-      label: 'TikTok',
-      icon: 'tiktok.svg',
-      value: '@planiel',
-      url: 'https://www.tiktok.com/@planiel',
-      background: '#000',
-    },
-    {
       label: 'unsplash',
       icon: 'unsplash.svg',
       value: '@planiel',

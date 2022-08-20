@@ -45,6 +45,9 @@
       padding: 80px;
       position: relative;
       height: 90%;
+      @include breakpoint(large) {
+        height: 80%;
+      }
     }
   }
 

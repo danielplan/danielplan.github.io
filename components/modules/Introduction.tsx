@@ -23,15 +23,7 @@ const Introduction = ({
     <section className={styles.module}>
       <div className={styles.inner}>
         <div className={styles.slider}>
-          <Slider
-            slides={references.map((r) => ({
-              image: r.imagePortrait,
-              label: r.name,
-              link: `/projects/${r.slug}`,
-              color: r.color,
-              altImage: r.previewImageAlt,
-            }))}
-          />
+          <Slider slides={references} />
         </div>
         <article className={styles.text}>
           <h1>

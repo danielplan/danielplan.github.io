@@ -14,7 +14,11 @@ const content = {
     titleLargeBlack: 'daniel',
     titleLargeColor: 'plan',
     description: 'Welcome to my website. Let me show you around.',
-    references: [getReference('wastend')],
+    references: [
+      getReference('ryoko'),
+      getReference('wastend'),
+      getReference('hikari'),
+    ],
   },
   introText: "I'm a _computer science_ student from South Tyrol, Italy.",
   skills: {
@@ -23,7 +27,11 @@ const content = {
     list: [
       {
         name: 'web development',
-        references: [getReference('wastend')],
+        references: [
+          getReference('ryoko'),
+          getReference('wastend'),
+          getReference('hikari'),
+        ],
       },
       {
         name: 'photography',

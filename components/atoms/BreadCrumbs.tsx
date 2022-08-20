@@ -1,4 +1,4 @@
-import {BASE_URL} from '@pages/_app';
+import general from '@content/general';
 
 interface Props {
   breadcrumbs: {
@@ -18,7 +18,7 @@ const BreadCrumbs = ({breadcrumbs}: Props): JSX.Element => {
           position: i + 1,
 
           item: {
-            '@id': BASE_URL + breadcrumb.path,
+            '@id': general.baseUrl + breadcrumb.path,
             name: breadcrumb.name,
           },
         })),

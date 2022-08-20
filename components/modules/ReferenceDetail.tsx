@@ -13,7 +13,7 @@ const ReferenceDetail = ({reference}: Props): JSX.Element => {
       <header className="container header">
         <div className={styles.inner}>
           <div className={styles.image}>
-            <ReferenceImage reference={reference} />
+            <ReferenceImage reference={reference} landscape />
           </div>
           <div className={styles.heading}>
             <div className={styles.text}>

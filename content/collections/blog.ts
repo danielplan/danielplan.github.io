@@ -27,7 +27,7 @@ const blogPosts = [
     previewImageAlt: 'Screenshot of the Wastend app',
     readTime: 5,
     slug: 'how-to-use-the-wastend-app',
-    tags: getAllTags(['app']),
+    tags: getAllTags(['web app']),
     meta: {
       title: 'How to use the Wastend app',
       description: 'A simple guide to use the Wastend app.',

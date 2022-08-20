@@ -1,19 +1,12 @@
 import styles from '@styles/layout/Slider.module.scss';
-import Image from 'next/image';
 import {useEffect, useState} from 'react';
 import SlideIn from '@components/animations/SlideIn';
 import Link from 'next/link';
-
-interface Slide {
-  label: string;
-  image: string;
-  color: string;
-  link: string;
-  altImage: string;
-}
+import {Reference} from '@content/collections/references';
+import ReferenceImage from '@components/modules/ReferenceImage';
 
 interface Props {
-  slides: Slide[];
+  slides: Reference[];
 }
 
 const Slider = ({slides}: Props): JSX.Element => {
@@ -39,25 +32,14 @@ const Slider = ({slides}: Props): JSX.Element => {
         transitionState > 0 ? styles['transition-' + transitionState] : ''
       }`}>
       {slides.map((slide, i) => (
-        <Link href={slide.link} key={i}>
+        <Link href={`/projects/${slide.slug}`} key={i}>
           <a
             className={`${styles.slide}
           ${current == i ? styles.current : ''}
            clickable`}>
-            <div
-              className={styles.image}
-              style={{backgroundColor: slide.color}}>
-              <div className={styles['image-inner']}>
-                <Image
-                  src={slide.image}
-                  alt={slide.altImage}
-                  layout="fill"
-                  objectFit="contain"
-                />
-              </div>
-            </div>
+            <ReferenceImage reference={slide} />
             <div className={styles.label}>
-              <span>{slide.label}</span>
+              <span>{slide.name}</span>
             </div>
           </a>
         </Link>

@@ -27,7 +27,7 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
                 </div>
               )}
               <Image
-                src={`/img/references/${reference.images[0].image}`}
+                src={`${reference.images[0].image}`}
                 alt={reference.images[0].alt}
                 layout="fill"
                 objectFit="cover"
@@ -37,7 +37,13 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
           {reference.link && (
             <Link href={reference.link} passHref>
               <a
-                className={styles.item + ' clickable ' + styles['item-1']}
+                className={
+                  styles.item +
+                  ' clickable ' +
+                  styles['item-link'] +
+                  ' ' +
+                  styles['item-1']
+                }
                 target="_blank"
                 rel="noopener noreferrer">
                 <article className={styles['inner-item']}>
@@ -58,10 +64,14 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
           {reference.images.slice(1).map((image, i) => (
             <article
               key={i}
-              className={styles.item + ' ' + styles['item-' + (i + 2)]}>
+              className={
+                styles.item +
+                ' ' +
+                styles['item-' + (i + (reference.link ? 2 : 1))]
+              }>
               <div className={styles['inner-item']}>
                 <Image
-                  src={`/img/references/${image.image}`}
+                  src={image.image}
                   alt={image.alt}
                   layout="fill"
                   objectFit="cover"

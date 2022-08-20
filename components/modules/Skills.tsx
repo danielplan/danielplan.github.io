@@ -4,6 +4,7 @@ import {Reference} from '@content/collections/references';
 import styles from '@styles/modules/Skills.module.scss';
 import Image from 'next/image';
 import {useEffect, useRef, useState} from 'react';
+import ReferenceImage from './ReferenceImage';
 
 const slideHeight = 600;
 
@@ -78,24 +79,7 @@ const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
                   </div>
                   {skill.references.map((reference, i) => (
                     <div key={i} className={styles['reference-container']}>
-                      <div
-                        className={styles.image}
-                        style={{
-                          backgroundColor: reference.color,
-                        }}>
-                        <div
-                          className={styles['image-inner']}
-                          style={{
-                            backgroundColor: reference.color,
-                          }}>
-                          <Image
-                            src={reference.imagePortrait}
-                            alt={reference.previewImageAlt}
-                            layout="fill"
-                            objectFit="contain"
-                          />
-                        </div>
-                      </div>
+                      <ReferenceImage reference={reference} />
                       <div className={styles['image-animation']}></div>
                     </div>
                   ))}
