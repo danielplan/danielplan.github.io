@@ -7,6 +7,7 @@ import MobileNavigation from '@components/layout/MobileNavigation';
 import references, {Reference} from '@content/collections/references';
 import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/projects';
+import BreadCrumbs from '@components/atoms/BreadCrumbs';
 
 interface Props {
   references: Reference[];
@@ -18,6 +19,14 @@ const Projects = ({references}: Props) => {
       <Head>
         <MetaInfo {...content.meta} />
         <title>{content.meta.title}</title>
+        <BreadCrumbs
+          breadcrumbs={[
+            {
+              path: '/projects',
+              name: 'Projects',
+            },
+          ]}
+        />
       </Head>
       <main className={styles.main}>
         <Title

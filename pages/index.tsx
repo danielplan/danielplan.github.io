@@ -10,12 +10,21 @@ import MobileNavigation from '@components/layout/MobileNavigation';
 import content from '@content/pages/home';
 import HighlightedText from '@components/atoms/HighlightedText';
 import MetaInfo from '@components/atoms/MetaInfo';
+import BreadCrumbs from '@components/atoms/BreadCrumbs';
 
 const Home: NextPage = () => {
   return (
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <BreadCrumbs
+          breadcrumbs={[
+            {
+              path: '/',
+              name: 'Home',
+            },
+          ]}
+        />
         <title>{content.meta.title}</title>
       </Head>
       <main className={styles.main}>

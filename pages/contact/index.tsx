@@ -8,6 +8,7 @@ import MobileNavigation from '@components/layout/MobileNavigation';
 import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/contact';
 import HighlightedText from '@components/atoms/HighlightedText';
+import BreadCrumbs from '@components/atoms/BreadCrumbs';
 
 const Home: NextPage = () => {
   return (
@@ -15,6 +16,14 @@ const Home: NextPage = () => {
       <Head>
         <MetaInfo {...content.meta} />
         <title>{content.meta.title}</title>
+        <BreadCrumbs
+          breadcrumbs={[
+            {
+              path: '/contact',
+              name: 'Contact',
+            },
+          ]}
+        />
       </Head>
       <main className={styles.main}>
         <div className="container">

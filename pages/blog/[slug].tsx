@@ -9,6 +9,7 @@ import MobileNavigation from '@components/layout/MobileNavigation';
 import blogPosts, {BlogPost, getBlogPost} from '@content/collections/blog';
 import MetaInfo from '@components/atoms/MetaInfo';
 import {readFileSync} from 'fs';
+import BreadCrumbs from '@components/atoms/BreadCrumbs';
 
 interface Props {
   post: BlogPost;
@@ -48,55 +49,69 @@ const Post = ({post}: Props) => {
               "description": "${post.lead}"
             }`}
         </script>
+        <BreadCrumbs
+          breadcrumbs={[
+            {
+              path: '/blog',
+              name: 'Blog',
+            },
+            {
+              path: `/blog/${post.slug}`,
+              name: post.title,
+            },
+          ]}
+        />
       </Head>
-      <article itemScope>
-        <div className="container header-padding">
-          <header className={styles.hero}>
-            <Tags tags={post.tags} />
-            <h1>{post.title}</h1>
-            <div className={styles.information}>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    src={CalendarIcon}
-                    width={16}
-                    height={16}
-                    alt="Calendar Icon"
-                  />
+      <main>
+        <article>
+          <div className="container header-padding">
+            <header className={styles.hero}>
+              <Tags tags={post.tags} />
+              <h1>{post.title}</h1>
+              <div className={styles.information}>
+                <div className={styles.tag}>
+                  <div className={styles.icon}>
+                    <Image
+                      src={CalendarIcon}
+                      width={16}
+                      height={16}
+                      alt="Calendar Icon"
+                    />
+                  </div>
+                  {dateString}
                 </div>
-                {dateString}
-              </div>
-              <div className={styles.tag}>
-                <div className={styles.icon}>
-                  <Image
-                    src={ClockIcon}
-                    width={16}
-                    height={16}
-                    alt="Clock Icon"
-                  />
+                <div className={styles.tag}>
+                  <div className={styles.icon}>
+                    <Image
+                      src={ClockIcon}
+                      width={16}
+                      height={16}
+                      alt="Clock Icon"
+                    />
+                  </div>
+                  {post.readTime} min to read
                 </div>
-                {post.readTime} min to read
               </div>
-            </div>
-          </header>
-        </div>
-        <div className={styles.image}>
-          <Image
-            src={post.previewImage}
-            alt={post.previewImageAlt}
-            objectFit="cover"
-            layout="fill"
-          />
-        </div>
-        <main className={styles.main}>
-          <div className={styles.container}>
-            <p className={styles.lead}>{post.lead}</p>
-            <div
-              className={styles.content}
-              dangerouslySetInnerHTML={{__html: post.body}}></div>
+            </header>
           </div>
-        </main>
-      </article>
+          <div className={styles.image}>
+            <Image
+              src={post.previewImage}
+              alt={post.previewImageAlt}
+              objectFit="cover"
+              layout="fill"
+            />
+          </div>
+          <div className={styles.main}>
+            <div className={styles.container}>
+              <p className={styles.lead}>{post.lead}</p>
+              <div
+                className={styles.content}
+                dangerouslySetInnerHTML={{__html: post.body}}></div>
+            </div>
+          </div>
+        </article>
+      </main>
       <MobileNavigation
         back={{
           href: '/blog',

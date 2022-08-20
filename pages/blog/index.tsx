@@ -6,19 +6,26 @@ import MobileNavigation from '@components/layout/MobileNavigation';
 import blogPosts, {BlogPost} from '@content/collections/blog';
 import MetaInfo from '@components/atoms/MetaInfo';
 import content from '@content/pages/blog';
+import BreadCrumbs from '@components/atoms/BreadCrumbs';
 
 interface Props {
   posts: BlogPost[];
 }
 
 const Blog = ({posts}: Props) => {
-  console.log(posts);
-
   return (
     <>
       <Head>
         <MetaInfo {...content.meta} />
         <title>{content.meta.title}</title>
+        <BreadCrumbs
+          breadcrumbs={[
+            {
+              path: '/blog',
+              name: 'Blog',
+            },
+          ]}
+        />
       </Head>
       <main className={styles.main}>
         <Title

@@ -5,7 +5,7 @@ import Navigation from '@components/layout/Navigation';
 import FakeCursor from '@components/atoms/FakeCursor';
 import Footer from '@components/layout/Footer';
 
-export const BASE_URL = 'https://danielplan.github.io/';
+export const BASE_URL = 'https://danielplan.github.io';
 
 function MyApp({Component, pageProps}: AppProps) {
   return (

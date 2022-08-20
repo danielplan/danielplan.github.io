@@ -1,6 +1,6 @@
-import Link from "next/link";
-import styles from "@styles/layout/Footer.module.scss";
-import Image from "next/image";
+import Link from 'next/link';
+import styles from '@styles/layout/Footer.module.scss';
+import Image from 'next/image';
 
 const Footer = (): JSX.Element => {
   return (
@@ -9,11 +9,16 @@ const Footer = (): JSX.Element => {
         <div className={styles.content}>
           <Link href="/">
             <a>
-              <Image src="/logo.svg" alt="" width={100} height={100} />
+              <Image
+                src="/logo.svg"
+                alt="website logo"
+                width={100}
+                height={100}
+              />
             </a>
           </Link>
           <div>
-            created by <b>daniel plan</b>, {new Date().getFullYear()}
+            created by <strong>daniel plan</strong>, {new Date().getFullYear()}
           </div>
         </div>
       </div>
