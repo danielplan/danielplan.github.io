@@ -98,6 +98,10 @@
 
 .skill {
   visibility: hidden;
+  .image {
+    position: absolute;
+    inset: 0;
+  }
 
   .image-animation {
     position: absolute;

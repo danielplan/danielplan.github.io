@@ -12,6 +12,14 @@ const tags: Tag[] = [
     name: 'web app',
     color: '#FF5935',
   },
+  {
+    name: 'photography',
+    color: '#47d8be',
+  },
+  {
+    name: 'nature',
+    color: '#47d87f',
+  },
 ];
 
 export default tags;

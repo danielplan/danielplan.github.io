@@ -15,9 +15,9 @@ const content = {
     titleLargeColor: 'plan',
     description: 'Welcome to my website. Let me show you around.',
     references: [
-      getReference('ryoko'),
       getReference('wastend'),
-      getReference('hikari'),
+      getReference('ryoko'),
+      getReference('hazy-days'),
     ],
   },
   introText: "I'm a _computer science_ student from South Tyrol, Italy.",
@@ -26,20 +26,28 @@ const content = {
     titleLarge: 'what I do',
     list: [
       {
-        name: 'web development',
+        name: 'development',
         references: [
           getReference('ryoko'),
-          getReference('wastend'),
-          getReference('hikari'),
+          getReference('ryoko'),
+          getReference('ryoko'),
         ],
       },
       {
         name: 'photography',
-        references: [getReference('wastend')],
+        references: [
+          getReference('hazy-days'),
+          getReference('hazy-days'),
+          getReference('hazy-days'),
+        ],
       },
       {
         name: 'design',
-        references: [getReference('wastend')],
+        references: [
+          getReference('wastend'),
+          getReference('wastend'),
+          getReference('wastend'),
+        ],
       },
     ],
   },

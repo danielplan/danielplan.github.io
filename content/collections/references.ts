@@ -52,6 +52,61 @@ const references: Reference[] = [
     tags: getAllTags(['web app']),
   },
   {
+    name: 'hazy days',
+    description: '_Photos_ taken on days where others would stay at home.',
+    previewImageAlt: 'Spiky mountain covered in clouds',
+    previewSize: 'large',
+    meta: {
+      title: 'hazy days',
+      description: 'Photos taken on days where others would stay at home.',
+      image: '/img/references/hazy-days/1.jpg',
+      keywords:
+        'hazy days, daniel plan, photography, mountains, clouds, modern',
+    },
+    images: [
+      {
+        image: '/img/references/hazy-days/1.jpg',
+        alt: 'Spiky mountain covered in clouds',
+      },
+      {
+        image: '/img/references/hazy-days/2.jpg',
+        alt: 'Mountain covered in clouds',
+      },
+      {
+        image: '/img/references/hazy-days/3.jpg',
+        alt: 'Dark woods covered in fog',
+      },
+      {
+        image: '/img/references/hazy-days/4.jpg',
+        alt: 'Mountain covered clouds with green grass',
+      },
+      {
+        image: '/img/references/hazy-days/5.jpg',
+        alt: 'Little hut in the middle of a meadow',
+      },
+      {
+        image: '/img/references/hazy-days/6.jpg',
+        alt: 'Little hut in the middle of a meadow',
+      },
+      {
+        image: '/img/references/hazy-days/7.jpg',
+        alt: 'Silhouette of a mountain covered with trees',
+      },
+      {
+        image: '/img/references/hazy-days/8.jpg',
+        alt: 'A path through nature hidden in fog',
+      },
+      {
+        image: '/img/references/hazy-days/9.jpg',
+        alt: 'Last sunlight in the woods covered in fog',
+      },
+    ],
+    slug: 'hazy-days',
+    imagePortrait: '/img/references/hazy-days/8.jpg',
+    imageLandscape: '/img/references/hazy-days/4.jpg',
+    tags: getAllTags(['photography', 'nature']),
+  },
+  {
     name: 'ryoko',
     description: 'Plan your projects like a _journey_ with ryoko.',
     previewImageAlt: 'Screenshot of the interface of ryoko.',
@@ -70,7 +125,7 @@ const references: Reference[] = [
       },
     ],
     slug: 'ryoko',
-    color: '#FBFDFD',
+    color: '#F2FFFF',
     imageLandscape: '/img/references/ryoko/landscape.png',
     imagePortrait: '/img/references/ryoko/portrait.png',
     previewSize: 'small',

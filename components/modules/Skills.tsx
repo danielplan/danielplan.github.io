@@ -79,7 +79,9 @@ const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
                   </div>
                   {skill.references.map((reference, i) => (
                     <div key={i} className={styles['reference-container']}>
-                      <ReferenceImage reference={reference} />
+                      <div className={styles.image}>
+                        <ReferenceImage reference={reference} />
+                      </div>
                       <div className={styles['image-animation']}></div>
                     </div>
                   ))}

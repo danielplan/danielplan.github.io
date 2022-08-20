@@ -41,7 +41,8 @@
   padding-bottom: 100%;
   @include breakpoint(large) {
     padding-bottom: 0;
-    height: 500px;
+    min-height: 500px;
+    height: 100%;
   }
 }
 .item-content {
