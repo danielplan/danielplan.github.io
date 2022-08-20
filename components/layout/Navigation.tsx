@@ -1,7 +1,7 @@
-import Link from "next/link";
-import styles from "@styles/layout/Navigation.module.scss";
-import Image from "next/image";
-import { useRouter } from "next/router";
+import Link from 'next/link';
+import styles from '@styles/layout/Navigation.module.scss';
+import Image from 'next/image';
+import {useRouter} from 'next/router';
 
 export interface NavItem {
   label: string;
@@ -11,24 +11,24 @@ export interface NavItem {
 
 export const navigationItems: NavItem[] = [
   {
-    label: "Home",
-    icon: "home",
-    href: "/",
+    label: 'Home',
+    icon: 'home',
+    href: '/',
   },
   {
-    label: "Projects",
-    icon: "portfolio",
-    href: "/projects",
+    label: 'Projects',
+    icon: 'portfolio',
+    href: '/projects',
   },
   {
-    label: "Blog",
-    icon: "blog",
-    href: "/blog",
+    label: 'Blog',
+    icon: 'blog',
+    href: '/blog',
   },
   {
-    label: "Contact",
-    icon: "contact",
-    href: "/contact",
+    label: 'Contact',
+    icon: 'contact',
+    href: '/contact',
   },
 ];
 
@@ -39,7 +39,7 @@ const Navigation = (): JSX.Element => {
     <header className={styles.header}>
       <div className={styles.content}>
         <Link href="/">
-          <a className={styles.logo + " clickable"}>
+          <a className={styles.logo + ' clickable'}>
             <Image src="/logo.svg" alt="" layout="fill" objectFit="contain" />
           </a>
         </Link>
@@ -48,12 +48,11 @@ const Navigation = (): JSX.Element => {
             <Link key={i} href={item.href} passHref>
               <a
                 className={
-                  ((router.pathname === "/" && item.href === "/") ||
-                  (item.href !== "/" && router.pathname.startsWith(item.href))
+                  ((router.pathname === '/' && item.href === '/') ||
+                  (item.href !== '/' && router.pathname.startsWith(item.href))
                     ? styles.active
-                    : "") + " clickable"
-                }
-              >
+                    : '') + ' clickable'
+                }>
                 {item.label}
               </a>
             </Link>

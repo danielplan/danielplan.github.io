@@ -1,5 +1,5 @@
-import styles from "@styles/atoms/FakeCursor.module.scss";
-import { useEffect, useRef } from "react";
+import styles from '@styles/atoms/FakeCursor.module.scss';
+import {useEffect, useRef} from 'react';
 
 const FakeCursor = (): JSX.Element => {
   const cursor = useRef<HTMLDivElement>(null);
@@ -9,10 +9,10 @@ const FakeCursor = (): JSX.Element => {
         const mouseX = e.clientX;
         const mouseY = e.clientY;
         const element = e.target as HTMLElement;
-        cursor.current.style.display = "block";
+        cursor.current.style.display = 'block';
         if (mouseX && mouseY) {
           cursor.current.style.transform = ``;
-          if (parentHasClass("clickable", element)) {
+          if (parentHasClass('clickable', element)) {
             cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px) scale(4)`;
           } else {
             cursor.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
@@ -22,15 +22,15 @@ const FakeCursor = (): JSX.Element => {
     };
     const removeCursor = () => {
       if (cursor.current) {
-        cursor.current.style.display = "none";
+        cursor.current.style.display = 'none';
       }
     };
 
-    window.addEventListener("mousemove", moveCursor);
-    window.addEventListener("mouseout", removeCursor);
+    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mouseout', removeCursor);
     return () => {
-      window.removeEventListener("mousemove", moveCursor);
-      window.removeEventListener("mouseout", removeCursor);
+      window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mouseout', removeCursor);
     };
   }, [cursor]);
   return (

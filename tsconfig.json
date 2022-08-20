@@ -26,11 +26,11 @@
       "@styles/*": [
         "./styles/*"
       ],
-      "@graphql/*": [
-        "./graphql/*"
-      ],
       "@pages/*": [
         "./pages/*"
+      ],
+      "@content/*": [
+        "./content/*"
       ],
       "@/*": [
         "./*"

@@ -1,13 +1,13 @@
-import styles from "@styles/modules/ReferenceDetail.module.scss";
-import SlideIn from "@components/animations/SlideIn";
-import { Reference } from "@prisma/client";
-import ReferenceImage from "./ReferenceImage";
+import styles from '@styles/modules/ReferenceDetail.module.scss';
+import SlideIn from '@components/animations/SlideIn';
+import ReferenceImage from './ReferenceImage';
+import {Reference} from '@content/collections/references';
 
 interface Props {
   reference: Reference;
 }
 
-const ReferenceDetail = ({ reference }: Props): JSX.Element => {
+const ReferenceDetail = ({reference}: Props): JSX.Element => {
   return (
     <section className={styles.module}>
       <header className="container header">

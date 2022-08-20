@@ -1,6 +1,6 @@
-import styles from "@styles/atoms/ContactCard.module.scss";
-import Image from "next/image";
-import Link from "next/link";
+import styles from '@styles/atoms/ContactCard.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
 interface Props {
   background: string;
   icon: string;
@@ -9,15 +9,14 @@ interface Props {
   url: string;
 }
 
-const ContactCard = ({ background, icon, label, value, url }: Props) => {
+const ContactCard = ({background, icon, label, value, url}: Props) => {
   return (
     <Link href={url}>
       <a target="_blank" className="clickable">
         <div className={styles.inner}>
           <div
-            className={styles.container + " " + styles.front}
-            style={{ background }}
-          >
+            className={styles.container + ' ' + styles.front}
+            style={{background}}>
             <Image
               src={`/img/icons/${icon}`}
               alt={label}
@@ -28,9 +27,8 @@ const ContactCard = ({ background, icon, label, value, url }: Props) => {
             <div className={styles.text}>{label}</div>
           </div>
           <div
-            className={styles.container + " " + styles.back}
-            style={{ background }}
-          >
+            className={styles.container + ' ' + styles.back}
+            style={{background}}>
             <Image
               src={`/img/icons/${icon}`}
               alt={label}

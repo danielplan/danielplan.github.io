@@ -1,15 +1,15 @@
-import styles from "@styles/layout/MobileNavigation.module.scss";
-import Image from "next/image";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import { navigationItems, NavItem } from "./Navigation";
+import styles from '@styles/layout/MobileNavigation.module.scss';
+import Image from 'next/image';
+import Link from 'next/link';
+import {useRouter} from 'next/router';
+import {navigationItems, NavItem} from './Navigation';
 
 interface Props {
   back?: NavItem;
   next?: NavItem;
 }
 
-const MobileNavigation = ({ back, next }: Props): JSX.Element => {
+const MobileNavigation = ({back, next}: Props): JSX.Element => {
   const router = useRouter();
   return (
     <nav className={styles.container}>
@@ -17,7 +17,7 @@ const MobileNavigation = ({ back, next }: Props): JSX.Element => {
         <>
           {back && (
             <Link href={back.href} passHref>
-              <a className={styles.item + " " + styles.action + " clickable"}>
+              <a className={styles.item + ' ' + styles.action + ' clickable'}>
                 <div className={styles.icon}>
                   <Image
                     src={`/img/icons/back.svg`}
@@ -33,7 +33,7 @@ const MobileNavigation = ({ back, next }: Props): JSX.Element => {
           )}
           {next && (
             <Link href={next.href} passHref>
-              <a className={styles.item + " " + styles.action + " clickable"}>
+              <a className={styles.item + ' ' + styles.action + ' clickable'}>
                 <div className={styles.icon}>
                   <Image
                     src={`/img/icons/next.svg`}
@@ -54,13 +54,12 @@ const MobileNavigation = ({ back, next }: Props): JSX.Element => {
             <a
               className={
                 styles.item +
-                " " +
-                ((router.pathname === "/" && item.href === "/") ||
-                (item.href !== "/" && router.pathname.startsWith(item.href))
+                ' ' +
+                ((router.pathname === '/' && item.href === '/') ||
+                (item.href !== '/' && router.pathname.startsWith(item.href))
                   ? styles.active
-                  : "")
-              }
-            >
+                  : '')
+              }>
               <div className={styles.icon}>
                 <Image
                   src={`/img/icons/${item.icon}.svg`}

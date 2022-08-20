@@ -1,65 +1,23 @@
-import SlideIn from "@components/animations/SlideIn";
-import GradientText from "@components/atoms/GradientText";
-import styles from "@styles/modules/Skills.module.scss";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import SlideIn from '@components/animations/SlideIn';
+import GradientText from '@components/atoms/GradientText';
+import {Reference} from '@content/collections/references';
+import styles from '@styles/modules/Skills.module.scss';
+import Image from 'next/image';
+import {useEffect, useRef, useState} from 'react';
 
 const slideHeight = 600;
-const skills = [
-  {
-    label: "Development",
-    references: [
-      {
-        color: "#E9FFFF",
-        image: "/wastend/mobile.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-    ],
-  },
-  {
-    label: "Photography",
-    references: [
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-    ],
-  },
-  {
-    label: "Design",
-    references: [
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-      {
-        color: "#E9FFFF",
-        image: "/image.png",
-      },
-    ],
-  },
-];
 
-const Skills = (): JSX.Element => {
+interface Skill {
+  name: string;
+  references: Reference[];
+}
+interface Props {
+  skills: Skill[];
+  titleSmall: string;
+  titleLarge: string;
+}
+
+const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
   const container = useRef<HTMLDivElement>(null);
   const [current, setCurrent] = useState(0);
 
@@ -83,28 +41,27 @@ const Skills = (): JSX.Element => {
         );
       }
     };
-    window.addEventListener("scroll", handler);
+    window.addEventListener('scroll', handler);
     return () => {
-      window.removeEventListener("scroll", handler);
+      window.removeEventListener('scroll', handler);
     };
-  }, [container]);
+  }, [container, skills]);
 
   return (
     <section
       className={styles.module}
       ref={container}
-      style={{ height: `calc(100vh + ${slideHeight * 3}px)` }}
-    >
+      style={{height: `calc(100vh + ${slideHeight * 3}px)`}}>
       <div className={styles.inner}>
         <div className="container">
           <div className={styles.content}>
             <h2>
               <div className="tiny-text">
-                <SlideIn>This is</SlideIn>
+                <SlideIn>{titleSmall}</SlideIn>
               </div>
               <SlideIn delay={300}>
-                <div className={"special " + styles.large}>
-                  <GradientText text="what I do" />
+                <div className={'special ' + styles.large}>
+                  <GradientText text={titleLarge} />
                 </div>
               </SlideIn>
             </h2>
@@ -113,32 +70,33 @@ const Skills = (): JSX.Element => {
                 <div
                   key={i}
                   className={`${styles.skill}
-                  ${i == current ? styles.current : ""}
-                  ${current - 1 == i ? styles.previous : ""}
-                  ${current + 1 == i ? styles.next : ""}`}
-                >
-                  <div key={i} className={styles["label-outer"]}>
-                    <div className={styles.label}>{skill.label}</div>
+                  ${i == current ? styles.current : ''}
+                  ${current - 1 == i ? styles.previous : ''}
+                  ${current + 1 == i ? styles.next : ''}`}>
+                  <div key={i} className={styles['label-outer']}>
+                    <div className={styles.label}>{skill.name}</div>
                   </div>
                   {skill.references.map((reference, i) => (
-                    <div key={i} className={styles["reference-container"]}>
+                    <div key={i} className={styles['reference-container']}>
                       <div
                         className={styles.image}
-                        style={{ backgroundColor: reference.color }}
-                      >
+                        style={{
+                          backgroundColor: reference.color,
+                        }}>
                         <div
-                          className={styles["image-inner"]}
-                          style={{ backgroundColor: reference.color }}
-                        >
+                          className={styles['image-inner']}
+                          style={{
+                            backgroundColor: reference.color,
+                          }}>
                           <Image
-                            src={reference.image}
+                            src={reference.imagePortrait}
                             alt=""
                             layout="fill"
                             objectFit="contain"
                           />
                         </div>
                       </div>
-                      <div className={styles["image-animation"]}></div>
+                      <div className={styles['image-animation']}></div>
                     </div>
                   ))}
                 </div>

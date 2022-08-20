@@ -1,49 +1,50 @@
-import styles from "@styles/modules/Introduction.module.scss";
-import GradientText from "@components/atoms/GradientText";
-import SlideIn from "@components/animations/SlideIn";
-import Slider from "@components/layout/Slider";
+import styles from '@styles/modules/Introduction.module.scss';
+import GradientText from '@components/atoms/GradientText';
+import SlideIn from '@components/animations/SlideIn';
+import Slider from '@components/layout/Slider';
+import {Reference} from '@content/collections/references';
 
-const Introduction = (): JSX.Element => {
+interface Props {
+  titleSmall: string;
+  titleLargeBlack: string;
+  titleLargeColor: string;
+  description: string;
+  references: Reference[];
+}
+
+const Introduction = ({
+  titleSmall,
+  titleLargeBlack,
+  titleLargeColor,
+  description,
+  references,
+}: Props): JSX.Element => {
   return (
     <section className={styles.module}>
       <div className={styles.inner}>
         <div className={styles.slider}>
           <Slider
-            slides={[
-              {
-                label: "wastend",
-                image: "/img/references/wastend/mobile.png",
-                color: "#dcffff",
-                link: "/projects/wastend",
-              },
-              {
-                label: "ryoko",
-                image: "/img/references/ryoko/mobile.png",
-                color: "#EAE3FF",
-                link: "/projects/ryoko",
-              },
-              {
-                label: "Hikari",
-                image: "/img/references/hikari/mobile.png",
-                color: "#E8DDFF",
-                link: "/projects/hikari",
-              },
-            ]}
+            slides={references.map((r) => ({
+              image: r.imagePortrait,
+              label: r.name,
+              link: `/projects/${r.slug}`,
+              color: r.color,
+            }))}
           />
         </div>
         <div className={styles.text}>
           <h1>
             <div className="tiny-text">
-              <SlideIn>Hey I&apos;m</SlideIn>
+              <SlideIn>{titleSmall}</SlideIn>
             </div>
             <div className="special">
               <SlideIn delay={300}>
-                daniel <GradientText text="plan" />
+                {titleLargeBlack} <GradientText text={titleLargeColor} />
               </SlideIn>
             </div>
           </h1>
           <SlideIn delay={600}>
-            <p>I still have to figure out what makes sense here.</p>
+            <p>{description}</p>
           </SlideIn>
         </div>
       </div>

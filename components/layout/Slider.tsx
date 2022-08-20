@@ -1,8 +1,8 @@
-import styles from "@styles/layout/Slider.module.scss";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import SlideIn from "@components/animations/SlideIn";
-import Link from "next/link";
+import styles from '@styles/layout/Slider.module.scss';
+import Image from 'next/image';
+import {useEffect, useState} from 'react';
+import SlideIn from '@components/animations/SlideIn';
+import Link from 'next/link';
 
 interface Slide {
   label: string;
@@ -15,7 +15,7 @@ interface Props {
   slides: Slide[];
 }
 
-const Slider = ({ slides }: Props): JSX.Element => {
+const Slider = ({slides}: Props): JSX.Element => {
   const [current, setCurrent] = useState(0);
   const [transitionState, setTransitionState] = useState(0);
   useEffect(() => {
@@ -35,21 +35,18 @@ const Slider = ({ slides }: Props): JSX.Element => {
   return (
     <div
       className={`${styles.container} ${
-        transitionState > 0 ? styles["transition-" + transitionState] : ""
-      }`}
-    >
+        transitionState > 0 ? styles['transition-' + transitionState] : ''
+      }`}>
       {slides.map((slide, i) => (
         <Link href={slide.link} key={i}>
           <a
             className={`${styles.slide}
-          ${current == i ? styles.current : ""}
-           clickable`}
-          >
+          ${current == i ? styles.current : ''}
+           clickable`}>
             <div
               className={styles.image}
-              style={{ backgroundColor: slide.color }}
-            >
-              <div className={styles["image-inner"]}>
+              style={{backgroundColor: slide.color}}>
+              <div className={styles['image-inner']}>
                 <Image
                   src={slide.image}
                   alt=""
@@ -67,9 +64,9 @@ const Slider = ({ slides }: Props): JSX.Element => {
       {transitionState > 0 && <div className={styles.transitionBox}></div>}
       <div className={styles.legend}>
         <SlideIn>
-          {String(current + 1).padStart(2, "0")}{" "}
+          {String(current + 1).padStart(2, '0')}{' '}
           <span className={styles.tiny}>
-            {String(slides.length).padStart(2, "0")}
+            {String(slides.length).padStart(2, '0')}
           </span>
         </SlideIn>
       </div>
