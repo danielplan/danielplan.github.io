@@ -18,13 +18,14 @@ const Blog = ({posts}: Props) => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <title>{content.meta.title}</title>
       </Head>
       <main className={styles.main}>
         <Title
           smallHeading={content.titleSmall}
           largeHeadingColor={content.titleBig}
         />
-        <div className="margin-large-top container">
+        <section className="margin-large-top container">
           <div className={styles['blog-grid']}>
             {posts[0] && (
               <div className={styles['blog-item-large']}>
@@ -37,7 +38,7 @@ const Blog = ({posts}: Props) => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </main>
       <MobileNavigation />
     </>

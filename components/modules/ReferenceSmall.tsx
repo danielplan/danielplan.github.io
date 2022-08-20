@@ -11,7 +11,7 @@ interface Props {
 
 const ReferenceSmall = ({reference}: Props): JSX.Element => {
   return (
-    <section className={styles.module}>
+    <article className={styles.module}>
       <Link href={`/projects/${reference.slug}`}>
         <a className={`${styles['small-inner']} clickable`}>
           <SlideIn>
@@ -27,7 +27,7 @@ const ReferenceSmall = ({reference}: Props): JSX.Element => {
           </div>
         </a>
       </Link>
-    </section>
+    </article>
   );
 };
 

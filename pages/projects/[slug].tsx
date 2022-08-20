@@ -20,6 +20,7 @@ const ProjectDetail = ({reference}: Props) => {
     <>
       <Head>
         <MetaInfo {...reference.meta} />
+        <title>{reference.meta.title}</title>
       </Head>
       <main className={styles.main}>
         <ReferenceDetail reference={reference} />

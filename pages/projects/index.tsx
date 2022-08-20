@@ -17,6 +17,7 @@ const Projects = ({references}: Props) => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <title>{content.meta.title}</title>
       </Head>
       <main className={styles.main}>
         <Title
@@ -26,7 +27,7 @@ const Projects = ({references}: Props) => {
         {references && references[0] && (
           <ReferenceLarge reference={references[0]} />
         )}
-        <div className="container">
+        <section className="container">
           <div className={styles['reference-list']}>
             {references.slice(1).map((reference) => (
               <div
@@ -38,7 +39,7 @@ const Projects = ({references}: Props) => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </main>
       <MobileNavigation />
     </>

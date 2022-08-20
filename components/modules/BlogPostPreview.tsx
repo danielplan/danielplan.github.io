@@ -29,7 +29,7 @@ const BlogPostPreview = ({post, large}: Props): JSX.Element => {
   });
 
   return (
-    <section
+    <article
       className={styles.module + ' clickable ' + (large ? styles.large : '')}>
       <Link href={`/blog/${post.slug}`} passHref>
         <a className={styles.inner}>
@@ -65,7 +65,7 @@ const BlogPostPreview = ({post, large}: Props): JSX.Element => {
               </div>
               <Image
                 src={post.previewImage}
-                alt=""
+                alt={post.previewImageAlt}
                 objectFit="cover"
                 layout="fill"
               />
@@ -82,7 +82,7 @@ const BlogPostPreview = ({post, large}: Props): JSX.Element => {
           </div>
         </a>
       </Link>
-    </section>
+    </article>
   );
 };
 

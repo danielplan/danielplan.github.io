@@ -11,7 +11,7 @@ interface Props {
 
 const ReferenceLarge = ({reference}: Props): JSX.Element => {
   return (
-    <section className={styles.module}>
+    <article className={styles.module}>
       <div className="container">
         <Link href={`/projects/${reference.slug}`}>
           <a className={styles.inner + ' clickable'}>
@@ -29,7 +29,7 @@ const ReferenceLarge = ({reference}: Props): JSX.Element => {
           </a>
         </Link>
       </div>
-    </section>
+    </article>
   );
 };
 

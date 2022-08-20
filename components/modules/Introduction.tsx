@@ -29,10 +29,11 @@ const Introduction = ({
               label: r.name,
               link: `/projects/${r.slug}`,
               color: r.color,
+              altImage: r.previewImageAlt,
             }))}
           />
         </div>
-        <div className={styles.text}>
+        <article className={styles.text}>
           <h1>
             <div className="tiny-text">
               <SlideIn>{titleSmall}</SlideIn>
@@ -46,7 +47,7 @@ const Introduction = ({
           <SlideIn delay={600}>
             <p>{description}</p>
           </SlideIn>
-        </div>
+        </article>
       </div>
     </section>
   );

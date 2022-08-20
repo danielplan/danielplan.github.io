@@ -9,6 +9,7 @@ const page404 = () => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <title>{content.meta.title}</title>
       </Head>
       <main>
         <Title

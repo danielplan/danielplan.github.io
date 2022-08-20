@@ -9,7 +9,11 @@ export interface Reference {
   color: string;
   imagePortrait: string;
   imageLandscape: string;
-  images: string[];
+  previewImageAlt: string;
+  images: {
+    image: string;
+    alt: string;
+  }[];
   video?: string;
   title?: string;
   text?: string;
@@ -22,10 +26,11 @@ export function getReference(slug: string) {
   return references.find((r) => r.slug === slug) as Reference;
 }
 
-const references = [
+const references: Reference[] = [
   {
     name: 'wastend',
     description: 'A modern way to organize your _groceries_.',
+    previewImageAlt: 'Screenshots of wastend',
     meta: {
       title: 'wastend - daniel plan',
       description: 'A modern way to organize your groceries.',
@@ -33,7 +38,12 @@ const references = [
       keywords:
         'wastend, daniel plan, groceries, shopping, organize, modern, shopping list, web app',
     },
-    images: [],
+    images: [
+      {
+        image: '/img/references/wastend/landscape.png',
+        alt: 'Screenshots of wastend',
+      },
+    ],
     slug: 'wastend',
     color: '#ff0000',
     imageLandscape: '/img/references/wastend/landscape.png',

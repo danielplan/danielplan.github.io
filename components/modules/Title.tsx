@@ -1,6 +1,6 @@
-import GradientText from "@components/atoms/GradientText";
-import styles from "@styles/modules/Title.module.scss";
-import SlideIn from "@components/animations/SlideIn";
+import GradientText from '@components/atoms/GradientText';
+import styles from '@styles/modules/Title.module.scss';
+import SlideIn from '@components/animations/SlideIn';
 
 interface Props {
   smallHeading?: string;
@@ -15,7 +15,7 @@ const Title = ({
 }: Props): JSX.Element => {
   return (
     <section className={styles.module}>
-      <div className="container header-padding">
+      <header className="container header-padding">
         <h1>
           {smallHeading && (
             <div className="tiny-text">
@@ -25,13 +25,13 @@ const Title = ({
           {(largeHeadingWhite || largeHeadingColor) && (
             <SlideIn delay={300}>
               <div className="special">
-                {largeHeadingWhite}{" "}
+                {largeHeadingWhite}{' '}
                 {largeHeadingColor && <GradientText text={largeHeadingColor} />}
               </div>
             </SlideIn>
           )}
         </h1>
-      </div>
+      </header>
     </section>
   );
 };

@@ -16,6 +16,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <title>{content.meta.title}</title>
       </Head>
       <main className={styles.main}>
         <Introduction
@@ -39,7 +40,7 @@ const Home: NextPage = () => {
           description={content.callToAction.description}
         />
         <div className="container centered">
-          <Button href="/portfolio" arrowRight>
+          <Button href="/projects" arrowRight>
             {content.callToAction.button}
           </Button>
         </div>

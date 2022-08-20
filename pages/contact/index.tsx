@@ -14,6 +14,7 @@ const Home: NextPage = () => {
     <>
       <Head>
         <MetaInfo {...content.meta} />
+        <title>{content.meta.title}</title>
       </Head>
       <main className={styles.main}>
         <div className="container">

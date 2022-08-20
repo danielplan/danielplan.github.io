@@ -7,7 +7,7 @@ export interface MetaInformation {
   keywords: string;
 }
 
-const MetaInfo = ({title, description, image}: MetaInformation) => {
+const MetaInfo = ({title, description, image, keywords}: MetaInformation) => {
   return (
     <>
       <meta name="description" content={description} />
@@ -25,7 +25,7 @@ const MetaInfo = ({title, description, image}: MetaInformation) => {
       <meta name="twitter:creator" content={general.twitterName} />
 
       <meta name="twitter:image:alt" content={description} />
-      <title>{title}</title>
+      <meta name="keywords" content={keywords} />
     </>
   );
 };

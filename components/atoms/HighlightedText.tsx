@@ -1,16 +1,20 @@
-import GradientText from "./GradientText";
+import GradientText from './GradientText';
 
 interface Props {
   text: string;
 }
 
-const HighlightedText = ({ text }: Props): JSX.Element => {
+const HighlightedText = ({text}: Props): JSX.Element => {
   return (
     <>
       {text
-        .split("_")
+        .split('_')
         .map((item, i) =>
-          i % 2 === 0 ? <>{item}</> : <GradientText key={i} text={item} />
+          i % 2 === 0 ? (
+            <span key={i}>{item}</span>
+          ) : (
+            <GradientText key={i} text={item} />
+          )
         )}
     </>
   );

@@ -67,14 +67,14 @@ const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
             </h2>
             <div className={styles.skills}>
               {skills.map((skill, i) => (
-                <div
+                <article
                   key={i}
                   className={`${styles.skill}
                   ${i == current ? styles.current : ''}
                   ${current - 1 == i ? styles.previous : ''}
                   ${current + 1 == i ? styles.next : ''}`}>
                   <div key={i} className={styles['label-outer']}>
-                    <div className={styles.label}>{skill.name}</div>
+                    <h3 className={styles.label}>{skill.name}</h3>
                   </div>
                   {skill.references.map((reference, i) => (
                     <div key={i} className={styles['reference-container']}>
@@ -90,7 +90,7 @@ const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
                           }}>
                           <Image
                             src={reference.imagePortrait}
-                            alt=""
+                            alt={reference.previewImageAlt}
                             layout="fill"
                             objectFit="contain"
                           />
@@ -99,7 +99,7 @@ const Skills = ({skills, titleSmall, titleLarge}: Props): JSX.Element => {
                       <div className={styles['image-animation']}></div>
                     </div>
                   ))}
-                </div>
+                </article>
               ))}
             </div>
           </div>

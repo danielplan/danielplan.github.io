@@ -19,7 +19,7 @@ const ContactCard = ({background, icon, label, value, url}: Props) => {
             style={{background}}>
             <Image
               src={`/img/icons/${icon}`}
-              alt={label}
+              alt={label + ' icon'}
               width="200"
               height="60"
               objectFit="contain"
@@ -31,7 +31,7 @@ const ContactCard = ({background, icon, label, value, url}: Props) => {
             style={{background}}>
             <Image
               src={`/img/icons/${icon}`}
-              alt={label}
+              alt={label + ' icon'}
               width="200"
               height="60"
               objectFit="contain"

@@ -6,13 +6,13 @@ interface Props {
 }
 const BigText = ({children}: Props) => {
   return (
-    <div className={styles.module}>
+    <section className={styles.module}>
       <div className="container">
         <SlideIn style="smooth">
           <p className={styles.text}>{children}</p>
         </SlideIn>
       </div>
-    </div>
+    </section>
   );
 };
 export default BigText;

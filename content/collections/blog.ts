@@ -6,6 +6,7 @@ export interface BlogPost {
   date: string;
   lead: string;
   previewImage: string;
+  previewImageAlt: string;
   readTime: number;
   slug: string;
   tags: Tag[];
@@ -23,6 +24,7 @@ const blogPosts = [
     date: '2020-01-01',
     lead: 'A simple guide to use the Wastend app.',
     previewImage: '/img/blog/wastend-app.png',
+    previewImageAlt: 'Screenshot of the Wastend app',
     readTime: 5,
     slug: 'how-to-use-the-wastend-app',
     tags: getAllTags(['app']),

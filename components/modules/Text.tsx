@@ -1,7 +1,7 @@
-import SlideIn from "@components/animations/SlideIn";
-import GradientText from "@components/atoms/GradientText";
-import styles from "@styles/modules/Text.module.scss";
-import { ReactNode } from "react";
+import SlideIn from '@components/animations/SlideIn';
+import GradientText from '@components/atoms/GradientText';
+import styles from '@styles/modules/Text.module.scss';
+import {ReactNode} from 'react';
 
 interface Props {
   smallHeading?: string;
@@ -30,7 +30,7 @@ const Text = ({
               {(largeHeadingWhite || largeHeadingColor) && (
                 <SlideIn delay={300}>
                   <div className="special">
-                    {largeHeadingWhite}{" "}
+                    {largeHeadingWhite}{' '}
                     {largeHeadingColor && (
                       <GradientText text={largeHeadingColor} />
                     )}

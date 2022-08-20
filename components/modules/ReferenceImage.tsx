@@ -1,4 +1,3 @@
-import SlideIn from '@components/animations/SlideIn';
 import {Reference} from '@content/collections/references';
 import styles from '@styles/modules/Reference.module.scss';
 import Image from 'next/image';
@@ -17,7 +16,7 @@ const ReferenceImage = ({reference, landscape}: Props) => {
         src={`/img/references${
           landscape ? reference.imageLandscape : reference.imagePortrait
         }`}
-        alt={reference.name + ' preview image'}
+        alt={reference.previewImageAlt}
         objectFit={reference.color ? 'contain' : 'cover'}
         layout="fill"
         objectPosition="center"

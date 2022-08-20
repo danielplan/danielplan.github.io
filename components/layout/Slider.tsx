@@ -9,6 +9,7 @@ interface Slide {
   image: string;
   color: string;
   link: string;
+  altImage: string;
 }
 
 interface Props {
@@ -49,7 +50,7 @@ const Slider = ({slides}: Props): JSX.Element => {
               <div className={styles['image-inner']}>
                 <Image
                   src={slide.image}
-                  alt=""
+                  alt={slide.altImage}
                   layout="fill"
                   objectFit="contain"
                 />

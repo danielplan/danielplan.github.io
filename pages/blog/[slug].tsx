@@ -25,6 +25,7 @@ const Post = ({post}: Props) => {
     <>
       <Head>
         <MetaInfo {...post.meta} />
+        <title>{post.meta.title}</title>
         <script type="application/ld+json">
           {`{
               "@context": "https://schema.org",
@@ -43,14 +44,6 @@ const Post = ({post}: Props) => {
               "mainEntityOfPage": {
                 "@type": "WebPage",
                 "@id": "${BASE_URL}/blog/${post.slug}"
-              },
-              "publisher": {
-                "@type": "Organization",
-                "name": "Daniel Plan",
-                "logo": {
-                  "@type": "ImageObject",
-                  "url": "${BASE_URL}/img/logo.svg"
-                }
               },
               "description": "${post.lead}"
             }`}
@@ -90,7 +83,7 @@ const Post = ({post}: Props) => {
         <div className={styles.image}>
           <Image
             src={post.previewImage}
-            alt=""
+            alt={post.previewImageAlt}
             objectFit="cover"
             layout="fill"
           />
