@@ -7,21 +7,33 @@ import Tags from '@components/modules/Tags';
 import MobileNavigation from '@components/layout/MobileNavigation';
 import blogPosts, {BlogPost, getBlogPost} from '@content/collections/blog';
 import MetaInfo from '@components/atoms/MetaInfo';
-import {readFileSync} from 'fs';
 import BreadCrumbs from '@components/atoms/BreadCrumbs';
 import general from '@content/general';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/night-owl.css';
+import {useEffect} from 'react';
 
 interface Props {
   post: BlogPost;
 }
 
 const Post = ({post}: Props) => {
-  const date = new Date(post.date);
-  const dateString = date.toLocaleString('default', {
+  const createDateString = new Date(post.publishDate).toLocaleString(
+    'default',
+    {
+      day: '2-digit',
+      month: 'long',
+      year: 'numeric',
+    }
+  );
+  const dateString = new Date(post.updateDate).toLocaleString('default', {
     day: '2-digit',
     month: 'long',
     year: 'numeric',
   });
+  useEffect(() => {
+    hljs.initHighlighting();
+  }, []);
   return (
     <>
       <Head>
@@ -38,7 +50,7 @@ const Post = ({post}: Props) => {
               '@type': 'Person',
               name: 'Daniel Plan',
             },
-            datePublished: dateString,
+            datePublished: createDateString,
             dateModified: dateString,
             image: {
               '@type': 'ImageObject',
@@ -48,7 +60,7 @@ const Post = ({post}: Props) => {
               '@type': 'WebPage',
               '@id': `${general.baseUrl}/blog/${post.slug}`,
             },
-            description: post.lead,
+            description: post.meta.description,
           })}
         </script>
         <BreadCrumbs
@@ -135,13 +147,7 @@ export async function getStaticProps({params}: Params) {
 
   return {
     props: {
-      post: {
-        ...post,
-        body: readFileSync(
-          `${process.cwd()}/content/collections/posts/${post.body}`,
-          'utf8'
-        ),
-      },
+      post,
     },
   };
 }

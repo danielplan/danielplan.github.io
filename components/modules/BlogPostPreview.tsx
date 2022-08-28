@@ -21,7 +21,7 @@ const BlogPostPreview = ({post, large}: Props): JSX.Element => {
           post.lead.substring(0, previewTextLength).lastIndexOf(' ')
         ) + '...'
       : post.lead;
-  const date = new Date(post.date);
+  const date = new Date(post.updateDate);
   const dateString = date.toLocaleString('default', {
     day: '2-digit',
     month: 'long',

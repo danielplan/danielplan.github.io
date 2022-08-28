@@ -1,4 +1,4 @@
-import {Reference} from '@content/collections/references';
+import references, {Reference} from '@content/collections/references';
 import styles from '@styles/modules/ReferenceGrid.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -19,7 +19,9 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
         )}
         <div className={styles.grid}>
           <article className={styles.item + ' ' + styles['item-0']}>
-            <div className={styles['inner-item']}>
+            <div
+              className={styles['inner-item']}
+              style={{backgroundColor: reference.images[0].color}}>
               {hasText && (
                 <div className={styles.text + ' ' + styles['item-content']}>
                   <h2>{reference.title}</h2>
@@ -30,7 +32,7 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
                 src={`${reference.images[0].image}`}
                 alt={reference.images[0].alt}
                 layout="fill"
-                objectFit="cover"
+                objectFit={reference.images[0].color ? 'contain' : 'cover'}
               />
             </div>
           </article>
@@ -69,12 +71,14 @@ const ReferenceGrid = ({reference}: Props): JSX.Element => {
                 ' ' +
                 styles['item-' + (i + (reference.link ? 2 : 1))]
               }>
-              <div className={styles['inner-item']}>
+              <div
+                className={styles['inner-item']}
+                style={{backgroundColor: reference.images[0].color}}>
                 <Image
                   src={image.image}
                   alt={image.alt}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit={image.color ? 'contain' : 'cover'}
                 />
               </div>
             </article>

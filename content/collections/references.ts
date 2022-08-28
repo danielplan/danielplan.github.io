@@ -13,6 +13,7 @@ export interface Reference {
   images: {
     image: string;
     alt: string;
+    color?: string;
   }[];
   video?: string;
   title?: string;
@@ -42,14 +43,16 @@ const references: Reference[] = [
       {
         image: '/img/references/wastend/1.png',
         alt: 'Screenshots of wastend',
+        color: '#ECF6F6',
       },
     ],
     slug: 'wastend',
+    link: 'https://github.com/danielplan/wastend-demo',
     color: '#DCFFFF',
     imageLandscape: '/img/references/wastend/landscape.png',
     imagePortrait: '/img/references/wastend/portrait.png',
     previewSize: 'small',
-    tags: getAllTags(['web app']),
+    tags: getAllTags(['app', 'design']),
   },
   {
     name: 'hazy days',
@@ -129,7 +132,7 @@ const references: Reference[] = [
     imageLandscape: '/img/references/ryoko/landscape.png',
     imagePortrait: '/img/references/ryoko/portrait.png',
     previewSize: 'small',
-    tags: getAllTags(['web app']),
+    tags: getAllTags(['app', 'design']),
   },
   {
     name: 'hikari',
@@ -153,7 +156,7 @@ const references: Reference[] = [
     imageLandscape: '/img/references/hikari/landscape.png',
     imagePortrait: '/img/references/hikari/landscape.png',
     previewSize: 'small',
-    tags: getAllTags(['web app']),
+    tags: getAllTags(['app']),
   },
 ];
 

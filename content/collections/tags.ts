@@ -9,7 +9,7 @@ export function getAllTags(t: string[]): Tag[] {
 
 const tags: Tag[] = [
   {
-    name: 'web app',
+    name: 'app',
     color: '#FF5935',
   },
   {
@@ -19,6 +19,22 @@ const tags: Tag[] = [
   {
     name: 'nature',
     color: '#47d87f',
+  },
+  {
+    name: 'design',
+    color: '#f779af',
+  },
+  {
+    name: 'seo',
+    color: '#49b0f4',
+  },
+  {
+    name: 'tech',
+    color: '#5a49f4',
+  },
+  {
+    name: 'basics',
+    color: '#81d323',
   },
 ];
 
