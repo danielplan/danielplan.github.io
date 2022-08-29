@@ -40,7 +40,12 @@ const Navigation = (): JSX.Element => {
       <div className={styles.content}>
         <Link href="/">
           <a className={styles.logo + ' clickable'}>
-            <Image src="/logo.svg" alt="" layout="fill" objectFit="contain" />
+            <Image
+              src="/img/logo.svg"
+              alt="Logo daniel plan"
+              layout="fill"
+              objectFit="contain"
+            />
           </a>
         </Link>
         <nav className={styles.nav}>

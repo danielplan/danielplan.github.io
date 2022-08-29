@@ -50,10 +50,10 @@ const blogPosts: BlogPost[] = [
     title: 'SEO for Web Developers: The basics of SEO',
     publishDate: '2022-08-31',
     updateDate: '2022-08-31',
-    lead: `While creating I needed to learn about the basics of SEO. After reading lots of articles
+    lead: `While creating this website I needed to learn about the basics of SEO. After reading lots of articles
     I realized that most of them are mainly focused on the content of a website (texts, images, structure of your content etc.) and usually do not cover the technical aspects of SEO.
     Oftentimes, we as developers, don't have any control over the final content that is displayed on the websites we create, since that is usually managed
-    by different teams. Nevertheless we still many responsibilities to ensure that our pages are optimized for search engines.
+    experts in that field. Nevertheless we still have a lot to consider to ensure that our pages are optimized for search engines.
     In this article I will cover the basics of SEO and how to optimize your website for search engines - from a technical perspective.`,
     previewImage: '/img/blog/seo-for-developers-basic/banner.png',
     previewImageAlt: 'HTML code used for search engine optimization',

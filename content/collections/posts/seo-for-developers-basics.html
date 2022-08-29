@@ -1,11 +1,18 @@
 <p>
     There are many different ways to optimize your website for search engines. In this article, I will cover
-    the more technical aspects of SEO. I will show you the most important HTML Tags and how to use them.
+    the more technical aspects of SEO. I will show you the <strong>most important HTML Tags</strong> and how to use
+    them, as well
+    as how to develop your websites in a way, that web crawlers have a better time understanding them.
+</p>
+<p>
     Generally, the first thing that a search engine will do after it crawls your page is to analyze the HTML
     tags and content of your page. Therefore, there are a lot of tags to know, which help you with your SEO.
-    Let's take a look at the most important HTML tags.<br>
-    This is by no means a complete list of everything you need to know about SEO, but I will keep this updated
-    while I learn more about this topic, so that it can be used as a reference for you.
+    Let's take a look at the most important HTML tags.
+</p>
+<p>
+    Note: This is by no means a complete list of everything you need to know about SEO, but I will keep this article
+    updated
+    while I learn more about this topic, so that you can use it as a reference while developing your websites.
 </p>
 <h2>
     The <code><head></code>-tag: Meta tags
@@ -14,22 +21,23 @@
     The most widely known way to improve the SEO of a website is to add meta tags to the head of the page.
     Meta tags contain additional information about the web page and about the content it displays. Such tags are for
     example:
+</p>
 <ul>
     <li>Title</li>
     <li>Description</li>
     <li>Keywords</li>
     <li>etc.</li>
 </ul>
-Let's have a look at them in detail and see how they can and how they are used.
+<p>
+    Let's have a look at them in detail and see how they can and how they are used.
 </p>
 <h3>
     Title
 </h3>
 <p>
     The title tag is the most important meta information of your page.
-    It is a short text which gives a brief headline to the content of the page. It is displayed as the title of the
-    search results and also showed in the browser tab.
-    Using it is very easy and looks something like this:
+    It is a short headline, that gives a general idea about the content of your website. It is shown as a heading
+    in search results and is also displayed in the browser tab. Using it is very easy and looks something like this:
 </p>
 <pre><code><html>
     <head>
@@ -46,13 +54,11 @@ Let's have a look at them in detail and see how they can and how they are used.
 <p>
     The description is the second most important
     meta information that the search engine will display directly to the users. It is a short text that is usually
-    displayed directly under the page's title in search results. This looks something like this.
+    displayed beneath the page's title in the search results:
 </p>
 <img src="/img/blog/seo-for-developers-basic/google_screenshot.png"
     alt="A screenshot of Google displaying a search result" loading="lazy">
 <p>
-    As you can see, the image above shows a search result of Google. The description is the text that is displayed
-    under the title, which in this case is "Google".<br>
     A description can be added to your HTML page by adding the following tag to the head of the page:
 </p>
 </code></pre>
@@ -72,45 +78,77 @@ Let's have a look at them in detail and see how they can and how they are used.
     Now that we have seen the two most important meta tags, let's take a look at some less straight forward ones.
 </p>
 <h3>
-    Robots meta tag
+    Favicon
 </h3>
 <p>
-    The robots meta tag is used to explain to the crawler (the robot) which pages can be indexed and which pages can't,
-    as
-    well as if the links of the page should be followed (crawled) by the crawler. For that, we need to specify if the
-    page is
-    indexable (index) or not indexable (noindex). In addition to that we need to specify if the page is followable
-    (follow) or
-    not followable (nofollow).
-    This may look something like this:
+    The favicon is a tiny image/icon displayed next to the page's title in the browser tab. It is used to identify the
+    website in the browser, after saving it to your bookmarks or after cluttering the browser's tab bar with other
+    websites. There are many different ways to include a favicon, but the most common way is to use a link to the
+    favicon
+    in the head of the page.
 </p>
-<pre><code>
-<html>
+<pre><code><html>
     <head>
         <title>A fascinating title | daniel plan.</title>
         <meta name="description" content="A fascinating description. This
         should be a general description of the contents of the page.">
-        <meta name="robots" content="index, follow">
-</head>
-<body>
-    <h1>My website</h1>
-</body>
-</code></pre>
-<p>The values specified above (index/noindex, follow/nofollow) are given with the structure above, comma seperated in
-    the content attribute.</p>
+        <link rel="icon" href="favicon.ico">
+    </head>
+    <body>
+        <h1>My website</h1>
+    </body>
+</html></code></pre>
+<p>
+    Nowadays, the favicon can also be in other formats such as <code>.svg</code>, <code>.png</code>, <code>.jpg</code>,
+    etc.
+</p>
 <h3>
-    Keywords meta tag
+    Robots
+</h3>
+<p>
+    The robots meta tag is used to explain to the crawler (the robot) which pages can be indexed and which pages can't,
+    as well as if the links of the page should be followed. For that, we need to specify if the
+    page is
+    indexable (index) or not indexable (noindex) and if the page should be followed
+    (follow) or not (nofollow).
+    This may look something like this:
+</p>
+<pre><code><html>
+    <head>
+        <title>A fascinating title | daniel plan.</title>
+        <meta name="description" content="A fascinating description. This
+        should be a general description of the contents of the page.">
+        <link rel="icon" href="favicon.ico">
+        <meta name="robots" content="index, follow">
+    </head>
+    <body>
+        <h1>My website</h1>
+    </body>
+</html></code></pre>
+<p>
+    The values specified above (index/noindex, follow/nofollow) need to be given in this structure, so that
+    the crawler can read it (comma separated and in the content attribute).
+</p>
+<p>
+    Obviously, in the example above I only showed you the default values (index, follow). Nevertheless using this tag is
+    in fact
+    very useful. With it, you can tell the crawler that some page may not be indexed. This is handy, if you have pages
+    that are not supposed to be indexed, such as hidden pages. This needs to be considered, when creating a website,
+    since sometimes we create pages that are not intended to be indexed.
+</p>
+<h3>
+    Keywords
 </h3>
 <p>
     The Keywords meta tag simply allows us to specify keywords that are relevant to the page.
     This may look something like this:
 </p>
-<pre><code>
-<html>
+<pre><code><html>
     <head>
         <title>A fascinating title | daniel plan.</title>
         <meta name="description" content="A fascinating description. This
         should be a general description of the contents of the page.">
+        <link rel="icon" href="favicon.ico">
         <meta name="keywords" content="keyword1, keyword2, keyword3">
     </head>
     <body>
@@ -118,17 +156,21 @@ Let's have a look at them in detail and see how they can and how they are used.
     </body>
 </html></code></pre>
 </code></pre>
+<p>
+    The keywords are simply separated by commas. Later in this article we will see another way to highlight keywords
+    in the paragraphs of your page, using the <code>strong</code> tag.
+</p>
 <h3>
-    Canonical meta tag
+    Canonical URL
 </h3>
 <p>
     The canonical meta tag is used to describe that the page is a duplicate of another page.
-    This may be handy if you have multiple pages with the same content but on different paths of your website.
-    For instance, you might run into something like this:
+    This is needed if you have multiple pages with the same content but on different paths of your website.
+    For instance, you might run into a situation similar to this one:
 </p>
 <p>
     You have a page that displays a product on the path <code>/products/cool-shirt/</code>. However
-    you also want to make it possible to access the page with the path <code>/summer-line/cool-shirt/</code>.
+    you also want to make it available with the path <code>/products/summer-line/cool-shirt/</code>.
     For such cases you need to use the canonical meta tag to tell the crawler that the page is a duplicate of the
     page with the path <code>/summer-line/cool-shirt/</code>.
 </p>
@@ -148,13 +190,13 @@ Let's have a look at them in detail and see how they can and how they are used.
     </body>
 </html></code></pre>
 <h3>
-    Open Graph meta tags
+    Open Graph
 </h3>
 <p>
     The last meta tags I want to get into are the Open Graph meta tags.
-    These are similar to the title and description meta tags, but they are not used by search engines, but by
-    social media sites. They are used to describe the page to social media sites, so that a small widget can appear
-    if someone shares your website on social media platforms.
+    These are similar to the title and description tags, yet they are not used by search engines, but by
+    social media platforms. The Open Graph tags are used to describe the page to social media sites, so that a small
+    widget can appear if someone shares your website on social media platforms.
 </p>
 <p>
     This allows you to add an image, a title and a description, as well as a type, a site name and a url, which are then
