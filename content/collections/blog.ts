@@ -53,12 +53,12 @@ const blogPosts: BlogPost[] = [
     lead: `While creating this website I needed to learn about the basics of SEO. After reading lots of articles
     I realized that most of them are mainly focused on the content of a website (texts, images, structure of your content etc.) and usually do not cover the technical aspects of SEO.
     Oftentimes, we as developers, don't have any control over the final content that is displayed on the websites we create, since that is usually managed
-    experts in that field. Nevertheless we still have a lot to consider to ensure that our pages are optimized for search engines.
+    experts in that field. Nevertheless, we still have a lot to consider when building websites to ensure that our pages are optimized for search engines.
     In this article I will cover the basics of SEO and how to optimize your website for search engines - from a technical perspective.`,
     previewImage: '/img/blog/seo-for-developers-basic/banner.png',
     previewImageAlt: 'HTML code used for search engine optimization',
     readTime: 10,
-    slug: 'seo-for-web-developers-the-basics',
+    slug: 'seo-for-web-developers-basics',
     tags: getAllTags(['seo', 'tech', 'basics']),
     meta: {
       title: 'SEO for Web Developers: The basics of SEO',

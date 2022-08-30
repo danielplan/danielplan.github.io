@@ -5,12 +5,14 @@
     as how to develop your websites in a way, that web crawlers have a better time understanding them.
 </p>
 <p>
-    Generally, the first thing that a search engine will do after it crawls your page is to analyze the HTML
-    tags and content of your page. Therefore, there are a lot of tags to know, which help you with your SEO.
+    Generally, the first thing that a search engine will do after crawling your page is to analyze the HTML
+    tags and content of your page. Therefore, there are a lot of tags you should know, which help you with your SEO.
     Let's take a look at the most important HTML tags.
 </p>
 <p>
-    Note: This is by no means a complete list of everything you need to know about SEO, but I will keep this article
+    Note before we start: This is article by no means a complete list of everything you need to know about SEO, but I
+    will keep this
+    article
     updated
     while I learn more about this topic, so that you can use it as a reference while developing your websites.
 </p>
@@ -19,24 +21,25 @@
 </h2>
 <p>
     The most widely known way to improve the SEO of a website is to add meta tags to the head of the page.
-    Meta tags contain additional information about the web page and about the content it displays. Such tags are for
+    Meta tags contain additional information about the web page and about the content it displays. Such tags contain for
     example:
 </p>
 <ul>
-    <li>Title</li>
-    <li>Description</li>
+    <li>The page title</li>
+    <li>A description</li>
     <li>Keywords</li>
     <li>etc.</li>
 </ul>
 <p>
-    Let's have a look at them in detail and see how they can and how they are used.
+    Let's have a look at some of them in detail and see how they can and how they are used.
 </p>
 <h3>
     Title
 </h3>
 <p>
     The title tag is the most important meta information of your page.
-    It is a short headline, that gives a general idea about the content of your website. It is shown as a heading
+    It is a <strong>short headline</strong> that gives a general idea about the content of your website. It is shown as
+    a heading
     in search results and is also displayed in the browser tab. Using it is very easy and looks something like this:
 </p>
 <pre><code><html>
@@ -53,7 +56,8 @@
 </h3>
 <p>
     The description is the second most important
-    meta information that the search engine will display directly to the users. It is a short text that is usually
+    meta information that the search engine will display directly to the users. It is a <strong>short text</strong> that
+    is usually
     displayed beneath the page's title in the search results:
 </p>
 <img src="/img/blog/seo-for-developers-basic/google_screenshot.png"
@@ -74,14 +78,13 @@
     </body>
 </html></code></pre>
 
-<p>
-    Now that we have seen the two most important meta tags, let's take a look at some less straight forward ones.
-</p>
 <h3>
     Favicon
 </h3>
 <p>
-    The favicon is a tiny image/icon displayed next to the page's title in the browser tab. It is used to identify the
+    The favicon is a <strong>tiny image/icon</strong> displayed next to the page's title in the <strong>browser
+        tab</strong>. It is used
+    to identify the
     website in the browser, after saving it to your bookmarks or after cluttering the browser's tab bar with other
     websites. There are many different ways to include a favicon, but the most common way is to use a link to the
     favicon
@@ -99,18 +102,22 @@
     </body>
 </html></code></pre>
 <p>
-    Nowadays, the favicon can also be in other formats such as <code>.svg</code>, <code>.png</code>, <code>.jpg</code>,
-    etc.
+    Modern browser nowadays also support many other formats such as <code>.svg</code>, <code>.png</code>,
+    <code>.jpg</code>, etc.
 </p>
 <h3>
     Robots
 </h3>
 <p>
-    The robots meta tag is used to explain to the crawler (the robot) which pages can be indexed and which pages can't,
-    as well as if the links of the page should be followed. For that, we need to specify if the
-    page is
-    indexable (index) or not indexable (noindex) and if the page should be followed
-    (follow) or not (nofollow).
+    The robots meta tag is used to define how the <strong>crawler</strong> should interact with your webpage.
+    In this case a crawler is, simply said, a bot that browses through
+    the internet and makes itself a list of all the pages it finds and the information it could find out about it,
+    this process is called indexing. With the robots meta tag, we can define which pages can be indexed and which pages
+    should be ignored,
+    as well as if the links of the page should be followed.
+    For that, we need to specify if the
+    page is <strong>indexable (index) or not indexable (noindex)</strong> and if the page should be <strong>followed
+        (follow) or not (nofollow).</strong>
     This may look something like this:
 </p>
 <pre><code><html>
@@ -119,7 +126,14 @@
         <meta name="description" content="A fascinating description. This
         should be a general description of the contents of the page.">
         <link rel="icon" href="favicon.ico">
+        <!-- Should be indexed and followed -->
         <meta name="robots" content="index, follow">
+        <!-- Should be indexed but not followed -->
+        <meta name="robots" content="index, nofollow">
+        <!-- Should not be indexed but followed -->
+        <meta name="robots" content="noindex, follow">
+        <!-- Should not be indexed and not be followed -->
+        <meta name="robots" content="noindex, nofollow">
     </head>
     <body>
         <h1>My website</h1>
@@ -130,9 +144,9 @@
     the crawler can read it (comma separated and in the content attribute).
 </p>
 <p>
-    Obviously, in the example above I only showed you the default values (index, follow). Nevertheless using this tag is
-    in fact
-    very useful. With it, you can tell the crawler that some page may not be indexed. This is handy, if you have pages
+    Even though it may seem a bit useless at first, this tag is actually
+    very important. With it, you can tell the crawler that some page may not be indexed. This is handy, if you have
+    pages
     that are not supposed to be indexed, such as hidden pages. This needs to be considered, when creating a website,
     since sometimes we create pages that are not intended to be indexed.
 </p>
@@ -140,7 +154,7 @@
     Keywords
 </h3>
 <p>
-    The Keywords meta tag simply allows us to specify keywords that are relevant to the page.
+    The Keywords meta tag simply allows us to specify keywords that are <strong>relevant to the page.</strong>
     This may look something like this:
 </p>
 <pre><code><html>
@@ -164,7 +178,7 @@
     Canonical URL
 </h3>
 <p>
-    The canonical meta tag is used to describe that the page is a duplicate of another page.
+    The canonical meta tag is used to describe that the page is a <strong>duplicate of another page.</strong>
     This is needed if you have multiple pages with the same content but on different paths of your website.
     For instance, you might run into a situation similar to this one:
 </p>
@@ -193,18 +207,19 @@
     Open Graph
 </h3>
 <p>
-    The last meta tags I want to get into are the Open Graph meta tags.
-    These are similar to the title and description tags, yet they are not used by search engines, but by
-    social media platforms. The Open Graph tags are used to describe the page to social media sites, so that a small
-    widget can appear if someone shares your website on social media platforms.
+    The last type of meta tags I want to get into are the Open Graph tags.
+    These are very similar to the meta tags described above, yet they are not used by search engines
+    or the
+    browser, but
+    were created to be used by <strong>social media platforms.</strong>
 </p>
 <p>
-    This allows you to add an image, a title and a description, as well as a type, a site name and a url, which are then
-    displayed in the social media widget
-    in posts.
+    Open Graph tags describe the page to social media sites, so
+    that they are able to render a widget when the user shares the web-page
+    in a post. These widgets usually contain a <strong>title, a short description and an image.</strong>
 </p>
 <p>
-    Here is an example of the Open Graph meta tags:
+    Here is an example of how Open Graph tags can be implemented on your page:
 </p>
 <pre><code><html>
     <head>
@@ -227,10 +242,14 @@
     </body>
 </html></code></pre>
 <p>
-    In the code snippet above, we can see how the Open Graph meta tags are used. The property attribute has to start
-    with <code>og:</code> followed by the name of the attribute. The content attribute contains the value of the
+    In the code snippet above, we can see how the Open Graph meta tags are used. The property attribute <strong>has to
+        start
+        with <code>og:</code></strong> followed by the name of the attribute. The content attribute contains the value
+    of the
     attribute.<br>
-    Let's look at the different attributes:
+</p>
+<p>
+    Let's look at the different attributes that the Open Graph Protocol allows:
 </p>
 <ul>
     <li>
@@ -257,84 +276,116 @@
         href="https://ogp.me/" target="_blank">Open Graph Protocol</a>.
 </p>
 <h2>
-    Semantic HTML Tags
+    Semantic HTML-Tags
 </h2>
 <p>
-    Now after we have seen how the head tag can be structured using meta tags, we still have to improve how our
-    <code><body></code> tag is presented to the search engine. Since HTML5 we are we have a lot of new tags that can be
-    used to describe
-    how the content of our website is structured, so that web crawlers and robots are able to understand the content
-    of our website.
+    After we have seen how the <code><head></code>-tag can be structured using meta tags, we still have to improve the
+    structure and the content of our <code><body></code>-tag.
 </p>
 <p>
-    Semantic HTML tags are simple to use and easy to understand, nevertheless they oftentimes are forgotten
+    With HTML5, a lot of semantic tags have been introduced. These are tags that do
+    <strong>not change the styling of your page,</strong> but give certain elements of your web-page a meaning and
+    context
+    just by looking at the HTML-Structure. This means,
+    that instead of
+    using
+    <code><div></code> or <code><span></code>, we can use such tags to say that a certain <code><div></code>, for
+    instance, is actually the page's navigation. Using this information, web crawlers are able to understand the
+    structure of our page, <strong>without
+        actually seeing it.</strong>
+</p>
+<p>
+    Semantic HTML tags are simple to use and easy to understand. Nevertheless, they are <strong>oftentimes
+        forgotten</strong>
     while building websites. So let's briefly explain which ones exist and how they work. Let's first look at a quick
-    sketch
-    I made of how a page may be structured, using semantic HTML-Tags
+    sketch of how a page may be structured, using semantic HTML-Tags
 </p>
 <img src="/img/blog/seo-for-developers-basic/page_sketch.png" alt="Sketch of page structure, using semantic HTML5-Tags">
 <h3>
     <code><header></code>-tag
 </h3>
 <p>
-    The header tag is used to describe the header-section of a page. This usually contains the company's logo,
-    a navigation and other links and is displayed at the top of the page. A header can also be the headline
+    The header tag is used to define the/a <strong>header-section of a page.</strong> This section usually contains the
+    <strong>company's logo,
+        a navigation and other links</strong> and is displayed at the top of the page. However, a header can also be the
+    <strong>headline</strong>
     of an article or a page. It can be used multiple times throughout the page, but can (for obvious reasons) only be
-    outside of a
+    used outside of a
     <code><footer></code>- and <code><address></code>-tag.
 </p>
 <h3>
     <code><footer></code>-tag
 </h3>
 <p>
-    The footer tag is used to describe the footer-section of a page or a section within a page.
-    This usually contains the copyright notice, contact information, author information
-    a navigation and other links and is displayed at the bottom of the page. You can use this tag multiple times
+    The footer tag is used to describe the footer-section of a the <strong>whole website or a section within a
+        page.</strong>
+    This usually contains <strong>the copyright notice, contact information, author information
+        a navigation and other links</strong> and is displayed at the bottom of the page. You can use this tag multiple
+    times
     throughout the page.
 </p>
 <h3>
     <code><address></code>-tag
 </h3>
 <p>
-    The address tag is used to describe the contact information of a company or a person.
+    The address tag is used to describe the <strong>contact information of a company or a person.</strong>
     This usually contains the address, phone number, email address and other contact information.
 </p>
 <h3>
     <code><article></code>-tag and <code><section></code>-tag
 </h3>
 <p>
-    These two tags are very similar but have different semantic meaning, both of them describe section of pages,
-    whereas the
-    <code><article></code>-tag describes articles only. Such articles might be forum posts, user comments, blog posts
-    and more.
-    The section is more general purpose and just defines that content within it can be interpreted as one
-    section of the
-    whole document
-    and has some form of connection within it, but are not self-contained.
+    These two tags are very similar but still have a small difference in their semantic meaning.
+    First, both of them describe a section of page. However, the most important difference is that
+    <code><article></code>-tag needs to be <strong>self-contained</strong> and should therefore be used for parts of a
+    page, that
+    are in a way self-sufficient. This means that a great example for the <code><article></code>-tag are for example
+    <strong>comments</strong> since
+    once a comment is over, there is not coming any new content that has to do with this specific comment. Obviously,
+    just by looking at the name of the tag
+    any form of article can also be within the <code><article></code>-tag.
 </p>
 <p>
-    So simply-said: the article tag describes content that is self-contained and has no connection to the
-    rest of the
-    page.
-    The section tag describes content that is connected to the rest of the page.
+    The <code><section></code>-tag is used to describe a section of a page, meaning that it is not self-contained and
+    <strong>relies to other section to form a complete page.</strong> This tag is therefore used if you, for instance,
+    have multiple
+    parts
+    on your page, such as a an about-section or a contact-form. Since they both form the whole page they can be seen as
+    sections
+    of the page.
+    The section is therefore more general purpose.
 </p>
+<p>
+    So simply-said:
+</p>
+<ul>
+    <li>
+        the <code>article</code>-tag describes content that is self-contained.
+    </li>
+    <li>
+        the <code>section</code>-tag describes content that is only a part of the whole page.
+    </li>
+</ul>
 <h3>
     <code><nav></code>-tag
 </h3>
 <p>
-    The nav tag is used to describe the navigation of a page. This usually contains the links to other pages
-    and
-    other content, which might even be on the same page, such as anchors to sections of the page.
-    There can be multiple nav tags on a page.<br>
+    The <code>nav</code>-tag is used to describe the navigation of a page. This usually contains <strong>links to other
+        web pages or
+        anchors within the current page.</strong>
+    There can be multiple nav tags on a page.
+</p>
+<p>
     However not all the links should be within navigation tags. It is only intended to be used for multiple
     links
-    grouped together, which form a navigation.
+    <strong>grouped together,</strong> which form a navigation.
 </p>
 <h3>
     <code><aside></code>-tag
 </h3>
 <p>
-    The aside tag symbolizes a side-section of a page. This usually is a sidebar or a sidebar widget which
+    The <code>aside</code>-tag symbolizes a side-section of a page. This usually is a sidebar or a some form of widget
+    which
     is displayed
     next to the main
     content of a website.
@@ -343,10 +394,11 @@
     <code><figure></code>-tag and <code><figcaption></code>-tag
 </h3>
 <p>
-    The figure tag is used to describe some form of image or a graphic, usually with a caption.
+    The <code>figure</code>-tag is used to describe some form of image or a chart, usually with a caption.
     It usually contains an <code>img</code>-tag to display the image and a <code>figcaption</code>-tag to
     describe the
-    caption of the graphic. The caption needs to be either the first or the last child of the figure tag.
+    caption of the graphic. The caption needs to be either the <strong>first or the last child</strong> of the figure
+    tag.
     Let's look at
     an example
 </p>
@@ -358,9 +410,11 @@
     <code><time></code>-tag
 </h3>
 <p>
-    This tag is used to define, that certain content is related to a date/ a certain time. It is used that
+    This tag is used to define, that certain content is related to a date or a certain time. With it,
     certain
-    strings of text can be readable for the web browsers and machines. This is useful, for instance, if you
+    strings of text can become readable for the <strong>web browsers and machines
+        other .</strong> This is useful, for
+    instance, if you
     want to
     display a date or a time in a way, that some agent would be able to add it to the user's calendar.
 </p>
@@ -374,33 +428,33 @@
     way.
     If you are interested in this tag, please consult the <a target="_blank"
         href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time">
-        Mozilla Developer Network</a> for more information.
+        Mozilla Developer Network</a> for more information on how this attribute can be formed.
 </p>
 <h3>
     <code><main></code>-tag
 </h3>
 <p>
-    The main tag is used to define which part of the page contains the main content of the page, outside
-    from the header
-    and footer. This tag can only be used once in a page and must be outside of the header-, footer-,
-    aside-, article-
-    and nav-tag.
+    The <code>main</code>-tag is used to define which part of the page contains the <strong>main content</strong> of the
+    page. This tag can only be used <strong>once</strong> in a page and must be outside of <code><header></code>-,
+    <code><footer></code>-,
+    <code><aside></code>-, <code><article></code>-
+    and <code><nav></code>-tags.
 </p>
 <h3>
     Other important tags
 </h3>
 <p>
-    Nevertheless, not only the new HTML5 tags have semantic meaning, also the old HTML tags have some meta
+    Nevertheless, not only the new HTML5 tags have semantic meaning, but also the old HTML tags have some meta
     information
-    that needs to be considered when building a website. Also, there are tags that are important to use
+    that needs to be considered when building a website. In addition to that, there are tags that are important to use
     correctly
     to ensure good SEO.
 </p>
 <h4>Heading tags</h4>
 <p>
-    For example, the <code><h1></code>-tag is used to describe the main headline of a page. It is crucial
-    for
-    SEO and should only be used once on a page. The rest of the heading tags are used to describe the
+    The order of and structure heading tags is crucial when developing a site.
+    For example, the <code><h1></code>-tag is used to describe the main headline of a page. This tag
+    can and should only be used once on a page. The rest of the heading tags are used to describe the
     sub-headlines of
     a page in a hierarchical order. For instance:
 </p>
@@ -412,7 +466,8 @@
 <h4>Main-Tag</h4></code></pre>
 <h4><code><img></code>-tag</h4>
 <p>
-    The image tag needs to have an <code>alt</code>-attribute to describe the image. This is crucial for SEO
+    The <code><img></code>-tag needs to have an <code>alt</code>-attribute to describe the image. This is crucial for
+    SEO
     and
     is mainly used for machines to understand the content of the image, which would otherwise be
     inaccessible for them.
@@ -425,10 +480,10 @@
 <p>
     Also the <code>height</code>- and <code>width</code>-attributes are important to use, since they are
     used to
-    define the size of the image in the page, so that the website-renderer knows, how large the image will
+    define the size of the image on the page, so that the website-renderer knows, how large the image will
     be, without
-    loading the image or the CSS.
-    Otherwise, the image might force to page the size of the page after it has been loaded, which would be a
+    loading the image itself or the CSS.
+    Otherwise, the image might force to page to resize after it has been loaded, which would be a
     bad
     experience for the user and therefore is punished by search engines.
 </p>
@@ -442,10 +497,17 @@
 <p>
     <code><strong></code> and <code><em></code> are very similar to the <code><b></code> and
     <code><i></code>
-    in their styling, but give a semantic meaning to it. <code><strong></code> is used to describe that some
-    words in the text are important and may be used for important keywords that can help the user or agent navigate
-    through your text. <code><em></code> is more used to lay emphasize on a portion of text, that needs to be read
-    in a different tone. With it, the text can be read and therefore understood easily by the user and the agent can
+    in their styling, but add a semantic meaning to it.
+</p>
+<p>
+    <code><strong></code> is used to describe that some
+    words in the text are <strong>important</strong> and may be be used by crawlers as keywords for your page.
+
+</p>
+<p>
+    <code><em></code> is used to lay emphasize on a portion of text, that needs to be read
+    in a <strong>different tone.</strong> With it,
+    the agent/web crawler can
     give the text portion more relevance.
 
 </p>
@@ -453,9 +515,10 @@
     Structured data: Schema.org
 </h2>
 <p>
-    Another important topic for SEO is structured data. Similar to meta data, structured data is used to
-    give the search engines additional information about content of a page, so that they can render
-    beautiful and understandable widgets to the user of the search engine, so-called "rich results".
+    Another interesting topic of SEO is structured data. Similar to meta data, structured data is used to
+    give the search engines <strong>additional information</strong> about content of a page in a machine-readable way,
+    so that they can render
+    beautiful and understandable widgets to the user of the search engine, with so-called "rich results".
     This data is not only used by search engines, but also other agents, who crawl the web.
 </p>
 <p>
@@ -466,7 +529,7 @@
 <h3>An example of structured data</h3>
 <p>
     First, let's have a look at a simple example of structured data, so that you know what I'm talking about.
-    Let's say you create a blog article and you
+    Let's say you create a <strong>blog article</strong> and you
     want that search engines understand that this web page is a blog post. For that, you need to add the following
     meta-data to the <code><head></code> of your HTML-Document:
 </p>
@@ -502,10 +565,10 @@
 }</script></code></pre>
 <p>
     As you can see in the snippet above, structured data is added using a JSON-LD-format. The
-    <code>@context</code>-attribute defines that we are in fact adding structured data using the schema.org
-    notation.<br>
-    The <code>@type</code>-attribute is used to define the type of the schema.<br>
-    The other attributes are defined by the type of structured data you implement and it values come
+    <code>@context</code>-attribute defines that we are in fact adding structured data using the <strong>schema.org
+        structure.</strong><br>
+    The <code>@type</code>-attribute is used to define the <strong>type of object</strong> you want to describe.<br>
+    The other attributes are depend on the type of structured data you implement and its values come
     from the the content you want to describe. Using these
     attributes, the search engine can understand your page and can render the correct widgets to the user.
 </p>
@@ -535,18 +598,17 @@
         <strong>Recipe</strong>: Used to describe a recipe, it contains information such as ingredients, cooking
         instructions etc. Recipes are rendered as widgets on the search engine's result page. Using the data of the
         schema,
-        recipes can even be found using ingredients and calories.
+        recipes can even be found using only ingredients and calories.
     </li>
     <li>
         <strong>Place</strong>: This type is used to describe a place, it contains information such as address,
-        opening hours etc. It is used to describe a location, such as a restaurant, a hotel, a museum etc.
+        opening hours etc. Locations can be restaurants, hotels, museums etc.
     </li>
 </ul>
 <p>
-    If you are interested in more types of structured data, Google offers a great resource where they list the different
-    types
-    and how they are rendered on the search engine's result <a title="Google using structured data"
+    If you are interested in more types of structured data, <a
         href="https://developers.google.com/search/docs/advanced/structured-data/search-gallery" target="_blank">
-        here.
+        Google offers a great resource where they list the different
+        and how they are rendered on the search engine's result
     </a>
 </p>

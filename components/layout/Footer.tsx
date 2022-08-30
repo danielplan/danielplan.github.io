@@ -10,7 +10,7 @@ const Footer = (): JSX.Element => {
           <Link href="/">
             <a>
               <Image
-                src="/logo.svg"
+                src="/img/logo.svg"
                 alt="website logo"
                 width={100}
                 height={100}
